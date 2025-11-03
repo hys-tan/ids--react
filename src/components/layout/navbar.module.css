@@ -1,0 +1,63 @@
+/* Estilos para Navbar.tsx */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #192845;
+  padding: 1.5rem 7rem;
+  font-weight: 750;
+  font-size: 1rem;
+}
+
+.logo a {
+  color: #F07E39;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.logoImg {
+  height: 40px;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 6rem; /* Aumenta el espacio entre links */
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks a {
+  color: #F07E39;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navLinks a:hover {
+  color: #FAFAFA; /* Un color de acento para el hover */
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 6rem; /* Espacio entre la lista de links y el botón */
+}
+
+.ctaButton {
+  padding: 0.6rem 1.5rem;
+  background-color: #F07E39;
+  color: #192845;
+  border: none;
+  border-radius: 8px;
+  font-weight: 750;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.ctaButton:hover {
+  color: #FAFAFA;
+}
