@@ -1,6 +1,6 @@
 
 .navbar {
-  background-color: #FAFAFA;
+  background-color: #F0F0F0;
   padding: 1rem 7rem;
   font-family: "Archivo", sans-serif;
 }
@@ -121,7 +121,7 @@
 }
 
 .ctaButton:hover {
-  color: #FAFAFA;
+  color: #F0F0F0;
   border: 1px solid #26272B;
 }
 

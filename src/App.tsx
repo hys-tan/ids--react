@@ -1,4 +1,6 @@
 import Navbar from './components/layout/navbar';
+import HomePage from './sections/homePage'; // Import HomePage
+import Cuerpo from './sections/cuerpo'; // Import Cuerpo
 
 function App() {
   return (
@@ -7,7 +9,8 @@ function App() {
 
       <main>
         {/* Aquí irán las secciones desde la carpeta /sections */}
-        <h1>Mi Landing Page</h1>
+        <HomePage /> {/* Render HomePage */}
+        <Cuerpo /> {/* Render Cuerpo */}
       </main>
 
       {/* Aquí irá el Footer desde components/layout/Footer.tsx */}
