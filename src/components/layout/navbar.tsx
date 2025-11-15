@@ -1,10 +1,13 @@
 import React from 'react';
 import styles from './navbar.module.css';
 import { getImageUrl } from '../../utils/image-helper';
+import { useStickyNavbar } from '../../hooks/useStickyNavbar';
 
 const Navbar: React.FC = () => {
+  const { showNavbar } = useStickyNavbar();
+
   return (
-    <nav className={styles.navbar}>
+    <nav className={`${styles.navbar} ${showNavbar ? '' : styles.hidden}`}>
       {/* Top section */}
       <div className={styles.topNav}>
         <span>Lunes - Sábado | 08:00 - 19:00</span>
