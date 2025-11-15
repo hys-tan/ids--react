@@ -3,13 +3,18 @@
   background-color: #F0F0F0;
   padding: 1rem 7rem;
   font-family: "Archivo", sans-serif;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 50;
 }
 
 .topNav {
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  gap: 4rem;
   padding-bottom: 1rem;
   font-size: 14px;
-  color: #26272B;
+  color: #26272b5c;
   font-weight: 500;
   font-variation-settings: "wdth" 105;
 }

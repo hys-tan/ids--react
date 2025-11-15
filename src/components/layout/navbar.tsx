@@ -8,6 +8,7 @@ const Navbar: React.FC = () => {
       {/* Top section */}
       <div className={styles.topNav}>
         <span>Lunes - Sábado | 08:00 - 19:00</span>
+        <span>Av. Carlos Izaguirre Mza. B Lote. 05 15109, Lima</span>
       </div>
 
       {/* Divider */}
