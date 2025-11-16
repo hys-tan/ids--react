@@ -17,12 +17,33 @@
 .topNav {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   gap: 4rem;
   padding-bottom: 1rem;
   font-size: 14px;
   color: #26272b5c;
   font-weight: 500;
   font-variation-settings: "wdth" 105;
+}
+
+.topNavItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.topNav svg {
+  font-size: 14px;
+}
+
+.topNav a {
+  color: #26272b5c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.topNav a:hover {
+  color: #26272ba7;
 }
 
 .divider {

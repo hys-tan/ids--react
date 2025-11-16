@@ -1,7 +1,13 @@
+// BIBLIOTECAS EXTERNAS
 import React, { useState, useEffect } from 'react';
-import styles from './navbar.module.css';
-import { getImageUrl } from '../../utils/image-helper';
+import { BsPinMapFill, BsFillClockFill } from "react-icons/bs";
+
+// HOOKS Y UTILIDADES
 import { useStickyNavbar } from '../../hooks/useStickyNavbar';
+import { getImageUrl } from '../../utils/image-helper';
+
+// ESTILOS
+import styles from './navbar.module.css';
 
 const Navbar: React.FC = () => {
   const { showNavbar } = useStickyNavbar();
@@ -34,8 +40,20 @@ const Navbar: React.FC = () => {
     <nav className={`${styles.navbar} ${showNavbar ? '' : styles.hidden}`}>
       {/* Top section */}
       <div className={styles.topNav}>
-        <span>Lunes - Sábado | 08:00 - 19:00</span>
-        <span>Av. Carlos Izaguirre Mza. B Lote. 05 15109, Lima</span>
+        <div className={styles.topNavItem}>
+          <BsFillClockFill />
+          <span>Lunes - Sábado | 08:00 - 19:00</span>
+        </div>
+        <div className={styles.topNavItem}>
+          <BsPinMapFill />
+          <a 
+            href="https://maps.app.goo.gl/SXjyDn6avG68qgQN7" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            Av. Carlos Izaguirre Mza. B Lote. 05 15109 - SMP
+          </a>
+        </div>
       </div>
 
       {/* Divider */}
