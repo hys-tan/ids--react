@@ -1,7 +1,13 @@
+// BIBLIOTECAS EXTERNAS
 import React, { useRef, useEffect } from 'react';
-import styles from './homePage.module.css';
-import { getImageUrl } from '../utils/image-helper';
+import { BsChevronCompactDown } from "react-icons/bs";
+
+// HOOKS Y UTILIDADES
 import { useZoomOnScroll } from '../hooks/useZoomOnScroll';
+import { getImageUrl } from '../utils/image-helper';
+
+// ESTILOS
+import styles from './homePage.module.css';
  
 const HomePage: React.FC = () => {
   const { scale } = useZoomOnScroll();
@@ -23,13 +29,16 @@ const HomePage: React.FC = () => {
       />
       <div className={styles.contentWrapper}>
         <h1 className={styles.title}>Servicio Técnico Especializado</h1>
-        <p className={styles.description}>Ofrecemos mantenimiento preventivo y correctivo, grupos electrógenos, fabricación de tableros de transferencia y mantenimiento de motores eléctricos.</p>
+        <p className={styles.description}>Somos una empresa especializada en servicios técnicos integrales, ofreciendo mantenimiento preventivo y correctivo, grupos electrógenos, fabricación de tableros de transferencia y mantenimiento de motores eléctricos.</p>
       </div>
       <div className={styles.shapeDivider}>
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-              <path d="M649.97 0L599.91 54.12 550.03 0 0 0 0 120 1200 120 1200 0 649.97 0z" className={styles.shapeFill}></path>
+              <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" className={styles.shapeFill}></path>
           </svg>
       </div>
+      <span className={styles.scrollIcon} aria-hidden="true" title="">
+        <BsChevronCompactDown />
+      </span>
     </div>
     // El segundo contenedor irá aquí abajo, pero lo haremos después.
   );
