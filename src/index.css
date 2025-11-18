@@ -35,3 +35,11 @@ html {
 body {
   -ms-overflow-style: none;
 }
+
+img {
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

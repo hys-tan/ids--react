@@ -68,6 +68,7 @@ const Cuerpo: React.FC = () => {
           </p>
         </div>
       </div>
+      <button className={styles.buttonMore}>Ver más</button>
 
       {/* Aquí va tu botón personalizado cuando quieras */}
     </section>
