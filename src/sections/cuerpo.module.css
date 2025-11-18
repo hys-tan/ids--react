@@ -1,7 +1,7 @@
 .cuerpoContainer {
     overflow: hidden;
     width: 100%; /* 100% of the viewport width */
-    min-height: 100vh; /* 100% of the viewport height */
+    min-height: 130vh; /* 100% of the viewport height */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,4 +9,109 @@
     background-color: #F0F0F0; /* Placeholder background */
     color: #26272B;
     text-align: center;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    font-variation-settings: "wdth" 112;
+    margin-bottom: 30px; /* Aumentamos el margen inferior para dar más espacio */
+    position: relative;
+    padding-bottom: 40px; /* Espacio entre el texto y la línea */
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 3px;
+    background-color: #26272B;
+    border-radius: 10px;
+}
+
+/* GRID PRINCIPAL */
+.grid {
+    display: grid;
+    /* Forzamos una cuadrícula de 2 columnas de igual tamaño */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    width: 100%;
+    max-width: 1800px; /* Aumentado para hacer las tarjetas más anchas */
+    margin: 0 auto;
+    padding: 1rem 7rem; /* Espacio de 7rem a los lados y 0 arriba/abajo */
+}
+
+/* TARJETAS */
+.card {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;/* Asegura una altura mínima para todas las tarjetas */
+}
+
+/* AREA IMAGEN */
+.imagePlaceholder {
+    width: 100%;
+    height: 280px; /* Aumentado para hacer las tarjetas más altas */
+    border: 1px solid #26272B;
+    border-radius: 6px;
+    overflow: hidden; /* Esto es clave para que la imagen respete los bordes redondeados */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: #26272B;
+}
+
+/* ESTILO PARA LA IMAGEN DENTRO DE LA TARJETA */
+.cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Añadimos una transición suave */
+}
+
+/* EFECTO ZOOM AL PASAR EL MOUSE */
+/* Cuando el mouse esté sobre el contenedor de la imagen... */
+.imagePlaceholder:hover .cardImage {
+    transform: scale(1.1);
+}
+
+/* TEXTO DE LAS TARJETAS */
+.cardTitle {
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-variation-settings: "wdth" 110;
+}
+
+.cardText {
+    font-size: 0.95rem;
+    color: #26272B;
+    line-height: 1.5;
+    text-align: justify;
+    font-weight: 300;
+    font-variation-settings: "wdth" 110;
+}
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 1300px) {
+    .title {
+        font-size: 1.5em;
+        padding: 0 2rem;
+        margin: 20px auto 30px auto;
+        margin-bottom: 40px;
+        margin-top: 2em;
+        padding-bottom: 40px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr; /* Cambia a una sola columna */
+        gap: 2rem;
+        padding: 0 2rem;;
+    }
 }
