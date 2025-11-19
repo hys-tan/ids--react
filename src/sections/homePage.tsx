@@ -8,7 +8,7 @@ import { getImageUrl } from '../utils/image-helper';
 
 // ESTILOS
 import styles from './homePage.module.css';
- 
+
 const HomePage: React.FC = () => {
   const { scale } = useZoomOnScroll();
   const containerRef = useRef<HTMLDivElement>(null);

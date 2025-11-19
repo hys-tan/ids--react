@@ -7,6 +7,7 @@
     justify-content: center;
     align-items: center;
     background-color: #F0F0F0; /* Placeholder background */
+    position: relative; /* IMPORTANTE: Para posicionar el shape divider */
     color: #26272B;
     text-align: center;
 }
@@ -161,6 +162,28 @@
     top: -45%;
     background-color: #26272B;
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+/* --- SHAPE DIVIDER --- */
+.shapeDivider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.shapeDivider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 45px;
+}
+
+.shapeDivider .shapeFill {
+    /* El color de relleno debe coincidir con la siguiente sección. */
+    fill: #26272B; /* Color de la sección "Nosotros" */
 }
 
 
