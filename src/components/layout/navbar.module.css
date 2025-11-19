@@ -20,7 +20,7 @@
   align-items: center;
   gap: 4rem;
   padding-bottom: 1rem;
-  font-size: 14px;
+  font-size: 0.875rem; /* 14px / 16px */
   color: #26272b5c;
   font-weight: 500;
   font-variation-settings: "wdth" 105;
@@ -81,7 +81,7 @@
   position: relative;
   color: #26272B;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1rem; /* 16px / 16px */
   transition: color 0.2s ease, transform 0.2s ease;
   cursor: pointer;
 }
@@ -298,7 +298,7 @@
   .navLinks a {
     display: block;
     padding: 0.5rem 0;
-    font-size: 20px;
+    font-size: 1.25rem; /* 20px / 16px */
   }
 
   .navLinks a::before {
