@@ -1,22 +1,23 @@
 .cuerpoContainer {
     overflow: hidden;
-    width: 100%; /* 100% of the viewport width */
-    min-height: 160vh; /* 100% of the viewport height */
+    width: 100%;
+    /* min-height: 150vh;*/
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;    /* center a flex-start */
     align-items: center;
-    background-color: #F0F0F0; /* Placeholder background */
-    position: relative; /* IMPORTANTE: Para posicionar el shape divider */
+    background-color: #F0F0F0;
+    position: relative;
     color: #26272B;
     text-align: center;
+    padding: 6rem 0;
 }
 
 .title {
     font-size: 2rem;
     font-weight: 700;
     font-variation-settings: "wdth" 112;
-    margin-bottom: 5.625rem; /* MEJORA: 90px -> 5.625rem. Escala con la fuente base. */
+    margin-bottom: 5rem; /* MEJORA: 80px -> 5rem. Escala con la fuente base. */
     position: relative;
     padding-bottom: 2.5rem; /* MEJORA: 40px -> 2.5rem. Escala con la fuente base. */
 }
@@ -27,7 +28,7 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 9.375rem; /* MEJORA: 150px -> 9.375rem. Escala con el título. */
+    width: 10rem; /* MEJORA: 160px -> 10rem. Escala con el título. */
     height: 3px;
     background-color: #26272B;
     border-radius: 10px;
@@ -43,6 +44,7 @@
     max-width: 112.5rem; /* MEJORA: 1800px -> 112.5rem. Más consistente. */
     margin: 0 auto;
     padding: 1rem 7rem; /* Espacio de 7rem a los lados y 0 arriba/abajo */
+    /*margin-bottom: 3rem;*/
 }
 
 /* TARJETAS */
@@ -100,70 +102,6 @@
     font-variation-settings: "wdth" 110;
 }
 
-.buttonMore {
-    display: inline-block;
-    padding: 0.6rem 1.5rem;
-    border: 1px solid #26272B;
-    border-radius: 4px;
-    transition: all 0.2s ease-in;
-    position: relative;
-    overflow: hidden;
-    font-size: 1rem;
-    cursor: pointer;
-    color: #26272B;
-    z-index: 1;
-    background-color: transparent;
-    margin-top: 3rem;
-    margin-bottom: 2rem;
-}
-
-.buttonMore:before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) scaleY(1) scaleX(1.25);
-    top: 100%;
-    width: 140%;
-    height: 180%;
-    background-color: rgba(0, 0, 0, 0.05);
-    border-radius: 50%;
-    display: block;
-    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-    z-index: -1;
-}
-
-.buttonMore:after {
-    content: "";
-    position: absolute;
-    left: 55%;
-    transform: translateX(-50%) scaleY(1) scaleX(1.45);
-    top: 180%;
-    width: 160%;
-    height: 190%;
-    background-color: #26272B;
-    border-radius: 50%;
-    display: block;
-    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-    z-index: -1;
-}
-
-.buttonMore:hover {
-    color: #F0F0F0;
-    border: 1px solid #26272B;
-}
-
-.buttonMore:hover:before {
-    top: -35%;
-    background-color: #26272B;
-    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-}
-
-.buttonMore:hover:after {
-    top: -45%;
-    background-color: #26272B;
-    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-}
-
 /* --- SHAPE DIVIDER --- */
 .shapeDivider {
     position: absolute;
@@ -182,20 +120,26 @@
 }
 
 .shapeDivider .shapeFill {
-    /* El color de relleno debe coincidir con la siguiente sección. */
-    fill: #26272B; /* Color de la sección "Nosotros" */
+    fill: #26272b00;
 }
 
 
 /* MOVIL V */
 @media (max-width: 1300px) {
+    .cuerpoContainer  {
+        padding: 5rem 0;
+    }
+
     .title {
         font-size: 1.5rem; /* MEJORA: Usar rem es más predecible que em en media queries. */
         padding: 0 2rem;
         /*margin: 20px auto 30px auto;*/
-        margin-bottom: 2.5rem; /* MEJORA: 40px -> 2.5rem */
-        margin-top: 2em;
+        margin-bottom: 4rem; /* MEJORA: 40px -> 2.5rem */
         padding-bottom: 2.5rem; /* MEJORA: 40px -> 2.5rem */
+    }
+
+    .title::after {
+        width: 8rem;
     }
 
     .grid {
@@ -204,8 +148,4 @@
         padding: 0 2rem;
     }
 
-    .buttonMore {
-        margin-top: 2rem;
-        margin-bottom: 4rem;
-    }
 }

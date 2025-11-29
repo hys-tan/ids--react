@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
         <div className={styles.topNavItem}>
           <BsPinMapFill />
           <a 
-            href="https://maps.app.goo.gl/SXjyDn6avG68qgQN7" 
+            href="https://maps.app.goo.gl/o9mERAochVnBAPxMA" 
             target="_blank" 
             rel="noopener noreferrer"
           >

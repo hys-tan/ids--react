@@ -1,4 +1,5 @@
 .nosotrosContainer {
+    position: relative;
     overflow: hidden;
     width: 100%;
     min-height: 100vh;
@@ -9,4 +10,37 @@
     background-color: #26272B;
     color: #F0F0F0;
     text-align: center;
+}
+
+.shapeDivider {
+    position: absolute;
+    top: -1px;  /* top: 0; */
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.shapeDivider svg {
+    position: relative;
+    display: block;
+    width: calc(300% + 1.3px);
+    height: 46px;
+    transform: rotateY(180deg);
+}
+
+.shapeDivider .shapeFill {
+    fill: #F0F0F0;
+}
+
+@media (max-width: 1300px) {
+    .nosotrosContainer {
+        padding: 5rem 0;
+    }
+
+    .shapeDivider svg {
+        width: calc(210% + 1.3px);
+        height: 21px;
+    }
 }
