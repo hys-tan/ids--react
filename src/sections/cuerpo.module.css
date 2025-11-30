@@ -102,27 +102,6 @@
     font-variation-settings: "wdth" 110;
 }
 
-/* --- SHAPE DIVIDER --- */
-.shapeDivider {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-}
-
-.shapeDivider svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 45px;
-}
-
-.shapeDivider .shapeFill {
-    fill: #26272b00;
-}
-
 
 /* MOVIL V */
 @media (max-width: 1300px) {
