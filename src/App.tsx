@@ -1,7 +1,8 @@
 import Navbar from './components/layout/navbar';
-import HomePage from './sections/homePage'; // Import HomePage
-import Cuerpo from './sections/cuerpo'; // Import Cuerpo
+import HomePage from './sections/homePage';
+import Cuerpo from './sections/cuerpo';
 import Nosotros from './sections/nosotros';
+import Valorag from './sections/valorag';
 import { useEffect } from 'react';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <HomePage /> {/* Render HomePage */}
         <Cuerpo /> {/* Render Cuerpo */}
         <Nosotros /> {/* Render Nosotros */}
+        <Valorag /> {/* Render Valorag */}
       </main>
 
       {/* Aquí irá el Footer desde components/layout/Footer.tsx */}
