@@ -9,7 +9,7 @@
     background-color: #F0F0F0;
     color: #26272B;
     text-align: center;
-    padding: 3rem 0;
+    padding: 4rem 0;
     gap: 4rem;
 }
 
@@ -19,4 +19,126 @@
     font-variation-settings: "wdth" 112;
     margin: 0;
     color: #26272B;
+}
+
+/* Contenedor del carrusel */
+.carouselWrapper {
+    width: 100%;
+    max-width: 112.5rem;
+    overflow: hidden;
+    position: relative;
+    padding: 1rem 7rem;
+}
+
+/* Overlay fade izquierdo - Bloque sólido + gradiente */
+.fadeLeft {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 17rem;
+    /* 7rem sólido + 10rem gradiente */
+    height: 100%;
+    background: linear-gradient(to right, #F0F0F0 7rem, transparent 17rem);
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Overlay fade derecho - Bloque sólido + gradiente */
+.fadeRight {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 17rem;
+    /* 7rem sólido + 10rem gradiente */
+    height: 100%;
+    background: linear-gradient(to left, #F0F0F0 7rem, transparent 17rem);
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Track del carrusel */
+.carouselTrack {
+    display: flex;
+    gap: 4rem;
+    animation: scroll 30s linear infinite;
+    will-change: transform;
+}
+
+/* Item individual del logo */
+.logoItem {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease;
+}
+
+.logoItem:hover {
+    box-shadow: 0 2px 12px #26272b1d;
+}
+
+/* Imagen del logo */
+.logoImage {
+    height: 70px;
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: filter 0.5s ease, opacity 0.3s ease;
+}
+
+.logoItem:hover .logoImage {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Animación de scroll infinito */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Versión móvil */
+@media (max-width: 1300px) {
+    .carouselWrapper {
+        padding: 1rem 2rem;
+    }
+
+    .fadeLeft,
+    .fadeRight {
+        width: 7rem;
+        background: linear-gradient(to right, #F0F0F0 2rem, transparent 7rem);
+    }
+
+    .fadeRight {
+        background: linear-gradient(to left, #F0F0F0 2rem, transparent 7rem);
+    }
+
+    .title {
+        font-size: 1.5rem;
+        padding: 0 2rem;
+    }
+
+    .carouselTrack {
+        gap: 2rem;
+        animation: scroll 20s linear infinite;
+    }
+
+    .logoItem {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .logoImage {
+        height: 50px;
+        max-width: 120px;
+    }
 }
