@@ -141,6 +141,7 @@
     .cardsContainer {
         width: calc(100% - 4rem); /* 100% - (2rem × 2 lados) */
         margin: 0 2rem;
+        gap: 2rem;
     }
 
 }

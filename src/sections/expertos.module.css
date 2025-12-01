@@ -1,0 +1,23 @@
+.expertosContainer {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #26272B;
+    color: #F0F0F0;
+    text-align: center;
+    padding: 3rem 0;
+    gap: 4rem
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    font-variation-settings: "wdth" 112;
+    margin: 0;
+    text-align: center;
+    color: #F0F0F0;
+}

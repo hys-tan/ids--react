@@ -3,6 +3,7 @@ import HomePage from './sections/homePage';
 import Cuerpo from './sections/cuerpo';
 import Nosotros from './sections/nosotros';
 import Valorag from './sections/valorag';
+import Expertos from './sections/expertos';
 import { useEffect } from 'react';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Cuerpo /> {/* Render Cuerpo */}
         <Nosotros /> {/* Render Nosotros */}
         <Valorag /> {/* Render Valorag */}
+        <Expertos /> {/* Render Expertos */}
       </main>
 
       {/* Aquí irá el Footer desde components/layout/Footer.tsx */}
