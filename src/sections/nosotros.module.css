@@ -18,7 +18,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    max-width: 112.5rem;
+    max-width: 98.5rem;     /* ========= SIN SOLUCIÓN =========*/
 }
 
 /* Columna de texto */
