@@ -1,0 +1,22 @@
+.clientesContainer {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F0F0F0;
+    color: #26272B;
+    text-align: center;
+    padding: 3rem 0;
+    gap: 4rem;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    font-variation-settings: "wdth" 112;
+    margin: 0;
+    color: #26272B;
+}

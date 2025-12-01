@@ -4,6 +4,7 @@ import Cuerpo from './sections/cuerpo';
 import Nosotros from './sections/nosotros';
 import Valorag from './sections/valorag';
 import Expertos from './sections/expertos';
+import Clientes from './sections/clientes';
 import { useEffect } from 'react';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <Nosotros /> {/* Render Nosotros */}
         <Valorag /> {/* Render Valorag */}
         <Expertos /> {/* Render Expertos */}
+        <Clientes /> {/* Render Clientes */}
       </main>
 
       {/* Aquí irá el Footer desde components/layout/Footer.tsx */}
