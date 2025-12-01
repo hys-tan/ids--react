@@ -2,7 +2,7 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    min-height: 100vh;
+    /* min-height: 100vh;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,12 +10,137 @@
     background-color: #26272B;
     color: #F0F0F0;
     text-align: center;
+    padding: 4rem 7rem;
+}
+
+/* Contenedor principal */
+.contentWrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 112.5rem;
+}
+
+/* Columna de texto */
+.textColumn {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;              /* =======================*/
+    text-align: left;
+}
+
+/* Título de la sección */
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    font-variation-settings: "wdth" 112;
+    margin: 0;
+    position: relative;
+    text-align: center;
+}
+
+/* Descripción */
+.description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: justify;
+    font-weight: 300;
+    font-variation-settings: "wdth" 110;
+    margin: 0;
+}
+
+/* Línea horizontal separadora */
+.divider {
+    border: none;
+    border-top: 2px solid #f0f0f053;
+    margin: 0;
+    width: auto;
+    border-radius: 10px;
+}
+
+/* Contenedor de tarjetas */
+.cardsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    width: 100%;
+}
+
+/* Tarjeta individual */
+.card {
+    background-color: #3A3B3F;
+    padding: 2rem 1.5rem;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+}
+
+/* Contenedor del icono */
+.iconWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Icono */
+.icon {
+    font-size: 3rem;
+    color: #F0F0F0;
+}
+
+/* Título de la tarjeta */
+.cardTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-variation-settings: "wdth" 110;
+    color: #F0F0F0;
+    margin: 0;
+}
+
+/* Texto de la tarjeta */
+.cardText {
+    font-size: 0.95rem;
+    font-weight: 300;
+    font-variation-settings: "wdth" 110;
+    color: #F0F0F0;
+    line-height: 1.7;
+    margin: 0;
 }
 
 
 @media (max-width: 1300px) {
     .nosotrosContainer {
-        padding: 5rem 0;
+        padding: 4rem 0;
+    }
+
+    .textColumn {
+        gap: 3rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+        padding: 0 2rem;
+        /*margin: 20px auto 30px auto;*/
+    }
+
+    .description {
+        padding: 0 2rem;
+        line-height: 1.7;
+    }
+
+    .divider {
+        margin: 0 2rem;
+        
+    }
+
+    .cardsContainer {
+        width: calc(100% - 4rem); /* 100% - (2rem × 2 lados) */
+        margin: 0 2rem;
     }
 
 }

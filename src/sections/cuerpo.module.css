@@ -10,28 +10,17 @@
     position: relative;
     color: #26272B;
     text-align: center;
-    padding: 3rem 0;
+    padding: 4rem 0;
+    gap: 4rem
 }
 
 .title {
     font-size: 2rem;
     font-weight: 700;
     font-variation-settings: "wdth" 112;
-    margin-bottom: 4rem; /* MEJORA: 64px -> 4rem. Escala con la fuente base. */
     position: relative;
-    padding-bottom: 2.5rem; /* MEJORA: 40px -> 2.5rem. Escala con la fuente base. */
-}
-
-.title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 10rem; /* MEJORA: 160px -> 10rem. Escala con el título. */
-    height: 2px;
-    background-color: #26272B;
-    border-radius: 10px;
+    /*padding-bottom: 4rem;*/
+    margin: 0;
 }
 
 /* GRID PRINCIPAL */
@@ -43,7 +32,7 @@
     width: 100%;
     max-width: 112.5rem; /* MEJORA: 1800px -> 112.5rem. Más consistente. */
     margin: 0 auto;
-    padding: 1rem 7rem; /* Espacio de 7rem a los lados y 0 arriba/abajo */
+    padding: 0rem 7rem; /* Espacio de 7rem a los lados y 0 arriba/abajo */
     /*margin-bottom: 3rem;*/
 }
 
@@ -100,25 +89,21 @@
     text-align: justify;
     font-weight: 300;
     font-variation-settings: "wdth" 110;
+    margin: 0;
 }
 
 
 /* MOVIL V */
 @media (max-width: 1300px) {
     .cuerpoContainer  {
-        padding: 5rem 0;
+        padding: 4rem 0;
     }
 
     .title {
         font-size: 1.5rem; /* MEJORA: Usar rem es más predecible que em en media queries. */
         padding: 0 2rem;
         /*margin: 20px auto 30px auto;*/
-        margin-bottom: 4rem; /* MEJORA: 40px -> 2.5rem */
-        padding-bottom: 2.5rem; /* MEJORA: 40px -> 2.5rem */
-    }
-
-    .title::after {
-        width: 8rem;
+        margin: 0;
     }
 
     .grid {
