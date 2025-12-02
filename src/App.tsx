@@ -7,6 +7,7 @@ import Expertos from './sections/expertos';
 import Clientes from './sections/clientes';
 import Footer from './components/layout/footer';
 import ScrollToTop from './components/common/ScrollToTop';
+import WhatsAppButton from './components/common/WhatsAppButton';
 import { useEffect } from 'react';
 
 function App() {
@@ -44,6 +45,9 @@ function App() {
 
       {/* Botón de scroll to top */}
       <ScrollToTop />
+
+      {/* Botón de WhatsApp */}
+      <WhatsAppButton />
     </>
   )
 }
