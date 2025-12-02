@@ -99,6 +99,7 @@
     margin: 0;
 }
 
+    /* 1300 */
 @media (max-width: 1300px) {
 
     .headerSection {
@@ -121,4 +122,11 @@
         padding: 0 2rem;
     }
 
+}
+
+    /* 501 */
+@media (max-width: 501px) {
+    .cardsGrid {
+        grid-template-columns: 1fr;
+    }
 }
