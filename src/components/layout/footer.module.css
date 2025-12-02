@@ -103,6 +103,14 @@
     color: #26272B;
 }
 
+/* Logo del footer */
+.footerLogo {
+    width: 120px;
+    height: auto;
+    margin-top: auto;
+    display: block;
+}
+
 /* Copyright */
 .copyright {
     text-align: center;
@@ -136,5 +144,9 @@
     .footerContent {
         grid-template-columns: 1fr;
         gap: 3rem;
+    }
+
+    .footerLogo {
+        display: none;
     }
 }

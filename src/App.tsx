@@ -6,6 +6,7 @@ import Valorag from './sections/valorag';
 import Expertos from './sections/expertos';
 import Clientes from './sections/clientes';
 import Footer from './components/layout/footer';
+import ScrollToTop from './components/common/ScrollToTop';
 import { useEffect } from 'react';
 
 function App() {
@@ -40,6 +41,9 @@ function App() {
 
       {/* Aquí irá el Footer desde components/layout/Footer.tsx */}
       <Footer />
+
+      {/* Botón de scroll to top */}
+      <ScrollToTop />
     </>
   )
 }

@@ -3,6 +3,7 @@ import styles from './footer.module.css';
 import { BsPinMapFill, BsTelephoneFill, BsFillClockFill } from "react-icons/bs";
 import { IoMail } from "react-icons/io5";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
+import { getImageUrl } from '../../utils/image-helper';
 
 const Footer: React.FC = () => {
     return (
@@ -61,6 +62,11 @@ const Footer: React.FC = () => {
                             <FaLinkedinIn />
                         </a>
                     </div>
+                    <img
+                        src={getImageUrl('logo2.png')}
+                        alt="Idelsi Soluciones Logo"
+                        className={styles.footerLogo}
+                    />
                 </div>
             </div>
 
