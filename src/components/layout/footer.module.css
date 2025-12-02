@@ -1,5 +1,5 @@
 .footer {
-    background-color: #3A3B3F;
+    background-color: #26272B;
     color: #F0F0F0;
     padding: 4rem 7rem 2rem 7rem;
     font-family: "Archivo", sans-serif;
@@ -100,7 +100,7 @@
 
 .socialIcon:hover {
     background-color: #F0F0F0;
-    color: #3A3B3F;
+    color: #26272B;
 }
 
 /* Copyright */
