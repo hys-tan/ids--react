@@ -5,6 +5,7 @@ import Nosotros from './sections/nosotros';
 import Valorag from './sections/valorag';
 import Expertos from './sections/expertos';
 import Clientes from './sections/clientes';
+import Footer from './components/layout/footer';
 import { useEffect } from 'react';
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
       </main>
 
       {/* Aquí irá el Footer desde components/layout/Footer.tsx */}
+      <Footer />
     </>
   )
 }

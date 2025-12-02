@@ -84,6 +84,7 @@
   font-size: 1rem; /* 16px / 16px */
   transition: color 0.2s ease, transform 0.2s ease;
   cursor: pointer;
+  font-variation-settings: "wdth" 105;
 }
 
 .navLinks a::before {
