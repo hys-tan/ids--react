@@ -31,8 +31,8 @@ const Footer: React.FC = () => {
                         </div>
                         <div className={styles.contactItem}>
                             <BsTelephoneFill className={styles.icon} />
-                            <a href="https://wa.me/51943683827" target="_blank" rel="noopener noreferrer">
-                                +51 943 683 827
+                            <a href="https://wa.me/51943663827" target="_blank" rel="noopener noreferrer">
+                                +51 943 663 827
                             </a>
                         </div>
                         <div className={styles.contactItem}>
