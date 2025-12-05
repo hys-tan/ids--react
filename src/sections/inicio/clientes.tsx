@@ -4,12 +4,12 @@ import { getImageUrl } from '../../utils/image-helper';
 
 const Clientes: React.FC = () => {
     const clientLogos = [
-        'aap.webp',
-        'frioa.webp',
-        'proquinsa.webp',
-        'binswagner.webp',
-        'fconfianza.webp',
-        'delosi.webp'
+        { file: 'aap.webp', name: 'AAP Industrial' },
+        { file: 'frioa.webp', name: 'Frioa' },
+        { file: 'proquinsa.webp', name: 'Proquinsa' },
+        { file: 'binswagner.webp', name: 'Binswagner' },
+        { file: 'fconfianza.webp', name: 'Financiera Confianza' },
+        { file: 'delosi.webp', name: 'Delosi' }
     ];
 
     return (
@@ -20,8 +20,8 @@ const Clientes: React.FC = () => {
                 {clientLogos.map((logo, index) => (
                     <div key={`logo-${index}`} className={styles.logoItem}>
                         <img
-                            src={getImageUrl(logo)}
-                            alt={`Cliente ${index + 1}`}
+                            src={getImageUrl(logo.file)}
+                            alt={`Logo de ${logo.name}`}
                             className={styles.logoImage}
                             loading="lazy"
                         />

@@ -13,7 +13,7 @@ const Cuerpo: React.FC = () => {
           <div className={styles.imagePlaceholder}>
             <img 
               src={getImageUrl('electromecanico.webp')}
-              alt="Mantenimiento Electromecánico"
+              alt="Mantenimiento Electromecánico de Grupos Electrógenos y Motores"
               className={styles.cardImage}
               loading="lazy"/>
           </div>
@@ -29,7 +29,7 @@ const Cuerpo: React.FC = () => {
           <div className={styles.imagePlaceholder}>
             <img 
               src={getImageUrl('bombeo.webp')}
-              alt="Sistema de Bombeo"
+              alt="Sistema de Bombeo y Presurización de Agua"
               className={styles.cardImage}
               loading="lazy"/>
           </div>
@@ -45,7 +45,7 @@ const Cuerpo: React.FC = () => {
           <div className={styles.imagePlaceholder}>
             <img 
               src={getImageUrl('ats.webp')}
-              alt="Sistema de Transferencia Automática"
+              alt="Tablero de Transferencia Automática ATS"
               className={styles.cardImage}
               loading="lazy"/>
           </div>
@@ -61,7 +61,7 @@ const Cuerpo: React.FC = () => {
           <div className={styles.imagePlaceholder}>
             <img 
               src={getImageUrl('pozo.webp')}
-              alt="Sistemas de Climatización y Seguridad"
+              alt="Sistema HVAC de Climatización y Pozo a Tierra"
               className={styles.cardImage}
               loading="lazy"/>
           </div>
