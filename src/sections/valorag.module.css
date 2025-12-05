@@ -10,7 +10,7 @@
     color: #26272B;
     text-align: center;
     padding: 4rem 0;
-    gap: 4rem;
+    gap: 3rem;
 }
 
 /* Sección de encabezado */
@@ -18,7 +18,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4rem;
+    gap: 3rem;
     max-width: 112.5rem;
     padding: 0 7rem;
 }
