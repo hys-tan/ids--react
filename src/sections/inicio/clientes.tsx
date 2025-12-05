@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './clientes.module.css';
-import { getImageUrl } from '../utils/image-helper';
+import { getImageUrl } from '../../utils/image-helper';
 
 const Clientes: React.FC = () => {
     const clientLogos = [

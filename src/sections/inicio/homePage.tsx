@@ -3,8 +3,8 @@ import React, { useRef, useEffect } from 'react';
 import { BsChevronCompactDown } from "react-icons/bs";
 
 // HOOKS Y UTILIDADES
-import { useZoomOnScroll } from '../hooks/useZoomOnScroll';
-import { getImageUrl } from '../utils/image-helper';
+import { useZoomOnScroll } from '../../hooks/useZoomOnScroll';
+import { getImageUrl } from '../../utils/image-helper';
 
 // ESTILOS
 import styles from './homePage.module.css';

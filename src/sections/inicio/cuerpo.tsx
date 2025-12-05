@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './cuerpo.module.css';
-import { getImageUrl } from '../utils/image-helper';
+import { getImageUrl } from '../../utils/image-helper';
 
 const Cuerpo: React.FC = () => {
   return (
