@@ -4,12 +4,12 @@ import { getImageUrl } from '../../utils/image-helper';
 
 const Clientes: React.FC = () => {
     const clientLogos = [
-        'aap.png',
-        'frioa.png',
-        'proquinsa.png',
-        'binswagner.png',
-        'fconfianza.png',
-        'delosi.png'
+        'aap.webp',
+        'frioa.webp',
+        'proquinsa.webp',
+        'binswagner.webp',
+        'fconfianza.webp',
+        'delosi.webp'
     ];
 
     return (
@@ -23,6 +23,7 @@ const Clientes: React.FC = () => {
                             src={getImageUrl(logo)}
                             alt={`Cliente ${index + 1}`}
                             className={styles.logoImage}
+                            loading="lazy"
                         />
                     </div>
                 ))}

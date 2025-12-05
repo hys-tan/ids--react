@@ -74,7 +74,7 @@ const Navbar: React.FC = () => {
 
         {/* Logo */}
         <a href="/" className={styles.logoLink}>
-          <img src={getImageUrl('logo.png')} alt="Idelsi" className={styles.logo} />
+          <img src={getImageUrl('logo.webp')} alt="Idelsi" className={styles.logo} />
         </a>
 
         <div className={`${styles.navActions} ${isMenuOpen ? styles.open : ''}`}>

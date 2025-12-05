@@ -14,7 +14,8 @@ const Cuerpo: React.FC = () => {
             <img 
               src={getImageUrl('electromecanico.webp')}
               alt="Mantenimiento Electromecánico"
-              className={styles.cardImage}/>
+              className={styles.cardImage}
+              loading="lazy"/>
           </div>
           <h3 className={styles.cardTitle}>Mantenimiento Electromecánico</h3>
           <p className={styles.cardText}>
@@ -29,7 +30,8 @@ const Cuerpo: React.FC = () => {
             <img 
               src={getImageUrl('bombeo.webp')}
               alt="Sistema de Bombeo"
-              className={styles.cardImage}/>
+              className={styles.cardImage}
+              loading="lazy"/>
           </div>
           <h3 className={styles.cardTitle}>Sistemas de Bombeo y Presurización</h3>
           <p className={styles.cardText}>
@@ -44,7 +46,8 @@ const Cuerpo: React.FC = () => {
             <img 
               src={getImageUrl('ats.webp')}
               alt="Sistema de Transferencia Automática"
-              className={styles.cardImage}/>
+              className={styles.cardImage}
+              loading="lazy"/>
           </div>
           <h3 className={styles.cardTitle}>Sistemas de Transferencia Automática</h3>
           <p className={styles.cardText}>
@@ -59,7 +62,8 @@ const Cuerpo: React.FC = () => {
             <img 
               src={getImageUrl('pozo.webp')}
               alt="Sistemas de Climatización y Seguridad"
-              className={styles.cardImage}/>
+              className={styles.cardImage}
+              loading="lazy"/>
           </div>
           <h3 className={styles.cardTitle}>Sistemas de Climatización y Seguridad</h3>
           <p className={styles.cardText}>
