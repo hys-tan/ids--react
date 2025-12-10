@@ -1,40 +1,18 @@
 // BIBLIOTECAS EXTERNAS
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BsPinMapFill, BsFillClockFill } from "react-icons/bs";
 
 // HOOKS Y UTILIDADES
 import { useStickyNavbar } from '../../hooks/useStickyNavbar';
 import { getImageUrl } from '../../utils/image-helper';
+import { useUI } from '../../contexts';
 
 // ESTILOS
 import styles from './navbar.module.css';
 
 const Navbar: React.FC = () => {
   const { showNavbar } = useStickyNavbar();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    if (isMenuOpen) {
-      // Bloquear scroll cuando el menú está abierto
-      document.body.style.overflow = 'hidden';
-    } else {
-      // Restaurar scroll cuando el menú está cerrado
-      document.body.style.overflow = 'unset';
-    }
-
-    // Cleanup: restaurar scroll cuando el componente se desmonte
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [isMenuOpen]);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
+  const { isMenuOpen, toggleMenu, closeMenu } = useUI();
 
   return (
     <nav className={`${styles.navbar} ${showNavbar ? '' : styles.hidden}`}>
@@ -46,9 +24,9 @@ const Navbar: React.FC = () => {
         </div>
         <div className={styles.topNavItem}>
           <BsPinMapFill />
-          <a 
-            href="https://maps.app.goo.gl/o9mERAochVnBAPxMA" 
-            target="_blank" 
+          <a
+            href="https://maps.app.goo.gl/o9mERAochVnBAPxMA"
+            target="_blank"
             rel="noopener noreferrer"
           >
             Av. Carlos Izaguirre Mza. B Lote. 05 15109 - SMP
@@ -62,7 +40,7 @@ const Navbar: React.FC = () => {
       {/* Bottom section */}
       <div className={styles.bottomNav}>
         {/* Hamburger button */}
-        <button 
+        <button
           className={`${styles.hamburger} ${isMenuOpen ? styles.active : ''}`}
           onClick={toggleMenu}
           aria-label="Toggle menu"

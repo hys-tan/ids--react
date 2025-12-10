@@ -8,6 +8,7 @@ import Clientes from './sections/inicio/clientes';
 import Footer from './components/layout/footer';
 import ScrollToTop from './components/common/ScrollToTop';
 import WhatsAppButton from './components/common/WhatsAppButton';
+import { UIProvider } from './contexts';
 import { useEffect } from 'react';
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <UIProvider>
       <Navbar />
 
       <main>
@@ -48,7 +49,7 @@ function App() {
 
       {/* Botón de WhatsApp */}
       <WhatsAppButton />
-    </>
+    </UIProvider>
   )
 }
 
