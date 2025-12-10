@@ -9,7 +9,7 @@
     align-items: center;
     background-color: #F0F0F0;
     text-align: center;
-    padding: 0;
+    padding: 0 7rem;
 }
 
 .content {
@@ -17,10 +17,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     width: 100%;
-    min-height: 100dvh;
-    height: 100%;
     align-items: center;
-    padding: 0 0 0 7rem;
 }
 
 .textContainer {
@@ -53,16 +50,14 @@
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     position: relative;
 }
 
 .heroImage {
-    height: 100%;
-    width: auto;
-    max-width: 100%;
-    object-fit: cover;
-    filter: grayscale(100%);
-    opacity: 0.9;
-    border-radius: 50% 0 0 50%;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 5px;
+    border: 1px solid #A7A8A9;
 }
