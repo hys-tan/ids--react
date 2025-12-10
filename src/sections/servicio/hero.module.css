@@ -45,6 +45,27 @@
     margin: 0;
 }
 
+.infoButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0;
+    background: none;
+    border: none;
+    color: #26272ba5;
+    font-size: 1rem;
+    font-weight: 500;
+    font-variation-settings: "wdth" 110;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-align: left;
+    text-decoration: none;
+}
+
+.infoButton:hover {
+    color: #26272B;
+}
+
 .imageContainer {
     width: 100%;
     height: 100%;
