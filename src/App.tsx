@@ -3,6 +3,7 @@ import Navbar from './components/layout/navbar';
 import Footer from './components/layout/footer';
 import ScrollToTop from './components/common/ScrollToTop';
 import WhatsAppButton from './components/common/WhatsAppButton';
+import RouteScrollReset from './components/common/RouteScrollReset';
 import { UIProvider } from './contexts';
 import { useEffect } from 'react';
 
@@ -31,6 +32,7 @@ function App() {
   return (
     <BrowserRouter>
       <UIProvider>
+        <RouteScrollReset />
         <Navbar />
 
         <Routes>
