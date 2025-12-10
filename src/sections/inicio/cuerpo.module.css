@@ -76,7 +76,7 @@
 /* TEXTO DE LAS TARJETAS */
 .cardTitle {
     margin-top: 24px;
-    margin-bottom: 2px;
+    margin-bottom: 1.5rem;
     font-size: 1.1rem;
     font-weight: 600;
     font-variation-settings: "wdth" 110;
@@ -85,7 +85,7 @@
 .cardText {
     font-size: 0.95rem;
     color: #26272B;
-    line-height: 1.5;
+    line-height: 1.7;
     text-align: justify;
     font-weight: 300;
     font-variation-settings: "wdth" 110;

@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './hero.module.css';
 import { getImageUrl } from '../../utils/image-helper';
-import { BsArrowRight } from 'react-icons/bs';
 
 const Hero: React.FC = () => {
     return (
@@ -16,10 +15,6 @@ const Hero: React.FC = () => {
                         especializado en sistemas eléctricos, electromecánicos y HVAC. Atención inmediata y
                         soporte técnico 24/7.
                     </p>
-                    <button className={styles.ctaButton}>
-                        Más información
-                        <BsArrowRight className={styles.arrow} />
-                    </button>
                 </div>
 
                 <div className={styles.imageContainer}>

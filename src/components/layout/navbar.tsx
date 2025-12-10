@@ -1,5 +1,6 @@
 // BIBLIOTECAS EXTERNAS
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { BsPinMapFill, BsFillClockFill } from "react-icons/bs";
 
 // HOOKS Y UTILIDADES
@@ -58,10 +59,10 @@ const Navbar: React.FC = () => {
         <div className={`${styles.navActions} ${isMenuOpen ? styles.open : ''}`}>
           {/* Navigation links */}
           <ul className={styles.navLinks}>
-            <li><a href="/#inicio" onClick={closeMenu}>Inicio</a></li>
-            <li><a href="/#servicios" onClick={closeMenu}>Servicios</a></li>
-            <li><a href="/#nosotros" onClick={closeMenu}>Nosotros</a></li>
-            <li><a href="/#contactanos" onClick={closeMenu}>Contáctanos</a></li>
+            <li><Link to="/" onClick={closeMenu}>Inicio</Link></li>
+            <li><Link to="/servicios" onClick={closeMenu}>Servicios</Link></li>
+            <li><Link to="/nosotros" onClick={closeMenu}>Nosotros</Link></li>
+            <li><Link to="/contacto" onClick={closeMenu}>Contáctanos</Link></li>
           </ul>
           <button className={styles.ctaButton} onClick={closeMenu}>
             Cotiza ahora

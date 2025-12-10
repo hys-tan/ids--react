@@ -1,0 +1,35 @@
+.hero {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F0F0F0;
+    text-align: center;
+    padding: 0 7rem;
+}
+
+.content {
+    width: 100%;
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 2em;
+    margin-top: 4em;
+    font-size: 3rem;
+    font-weight: 800;
+    font-variation-settings: "wdth" 112;
+    color: #26272B;
+}
+
+.description {
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 300;
+    font-variation-settings: "wdth" 110;
+    margin: 0;
+}
