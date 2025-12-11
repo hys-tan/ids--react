@@ -32,7 +32,7 @@
     color: #F0F0F0;
 }
 
-/* Botón de contacto */
+/* Botón de contacto 
 .contactButton {
     display: inline-block;
     padding: 0.6rem 1.5rem;
@@ -94,6 +94,7 @@
     background-color: #F0F0F0;
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
+*/
 
 @media (max-width: 1300px) {
     .contentWrapper {
@@ -105,11 +106,23 @@
     .title {
         font-size: 1.25rem;
         text-align: center;
+        font-weight: 600;
     }
-
+/*
     .contactButton {
         width: auto;
         padding: 0.8rem 2rem;
         font-size: 1.1rem;
+    }
+*/
+}
+
+@media (max-width: 501px) {
+    .expertosContainer {
+        padding: 2.25rem 0;
+    }
+    .title {
+        font-size: 1rem;
+        font-weight: 600;
     }
 }

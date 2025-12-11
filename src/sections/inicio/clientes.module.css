@@ -79,9 +79,20 @@
     }
 }
 
+@media (max-width: 601px) {
+    .logoImage {
+        height: 50px;
+    }
+}
+
 @media (max-width: 501px) {
+
+    .title {
+        font-weight: 600;
+    }
+
     .logosGrid {
-        grid-template-columns: 1fr;
+        /* grid-template-columns: 1fr; */
         gap: 1.5rem;
         max-width: 400px;
     }
@@ -91,6 +102,6 @@
     }
 
     .logoImage {
-        height: 50px;
+        height: 40px;
     }
 }

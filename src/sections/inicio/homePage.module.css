@@ -81,7 +81,7 @@
 
 @media (max-width: 1300px) {
     .contentWrapper {
-        padding: 2rem;
+        padding: 0 2rem;
     }
 
     .title {
@@ -105,5 +105,17 @@
         0%   { transform: translateX(-50%) translateY(0px); }
         50%  { transform: translateX(-50%) translateY(10px); }
         100% { transform: translateX(-50%) translateY(0px); }
+    }
+}
+
+@media (max-width: 501px) {
+
+    .title {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .description {
+        font-size: 0.95rem;
     }
 }

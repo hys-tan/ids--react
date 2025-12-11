@@ -149,6 +149,10 @@
 
     /* 501 */
 @media (max-width: 501px) {
+    .title {
+        font-weight: 600;
+    }
+
     .cardsContainer {
         grid-template-columns: 1fr;
     }

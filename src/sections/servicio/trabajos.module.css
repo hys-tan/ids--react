@@ -1,0 +1,13 @@
+.trabajosContainer {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F0F0F0;
+    color: #26272B;
+    text-align: center;
+}
