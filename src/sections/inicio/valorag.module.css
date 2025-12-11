@@ -21,6 +21,7 @@
     gap: 3rem;
     max-width: 112.5rem;
     padding: 0 7rem;
+    width: 100%;
 }
 
 /* Título principal */
@@ -42,7 +43,8 @@
     margin: 0;
     text-align: center;
     color: #26272B;
-    max-width: 60rem;
+    max-width: 112.5rem;
+    width: 100%;
 }
 
 /* Grid de tarjetas */
@@ -126,6 +128,10 @@
 
     /* 501 */
 @media (max-width: 501px) {
+    .description {
+        text-align: justify;
+    }
+
     .cardsGrid {
         grid-template-columns: 1fr;
     }
