@@ -15,10 +15,13 @@
 
 /* Contenedor principal */
 .contentWrapper {
+    position: relative;
+    /*z-inde: 2;*/
     display: flex;
     justify-content: center;
     width: 100%;
-    max-width: 98.5rem;     /* ========= SIN SOLUCIÓN =========*/
+    max-width: 98.5rem;
+    /* ========= SIN SOLUCIÓN =========*/
 }
 
 /* Columna de texto */
@@ -26,7 +29,8 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 3rem;              /* =======================*/
+    gap: 3rem;
+    /* =======================*/
     text-align: left;
 }
 
@@ -38,6 +42,7 @@
     margin: 0;
     position: relative;
     text-align: center;
+    z-index: 3;
 }
 
 /* Descripción */
@@ -48,6 +53,7 @@
     font-weight: 300;
     font-variation-settings: "wdth" 110;
     margin: 0;
+    z-index: 3;
 }
 
 /* Línea horizontal separadora */
@@ -57,6 +63,7 @@
     margin: 0;
     width: auto;
     border-radius: 10px;
+    z-index: 3;
 }
 
 /* Contenedor de tarjetas */
@@ -85,6 +92,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 0.5rem;
+    z-index: 3;
 }
 
 /* Icono */
@@ -100,6 +108,7 @@
     font-variation-settings: "wdth" 110;
     color: #F0F0F0;
     margin: 0;
+    z-index: 3;
 }
 
 /* Texto de la tarjeta */
@@ -110,10 +119,11 @@
     color: #F0F0F0;
     line-height: 1.7;
     margin: 0;
+    z-index: 3;
 }
 
 
-    /* 1300 */
+/* 1300 */
 @media (max-width: 1300px) {
     .nosotrosContainer {
         padding: 4rem 0;
@@ -136,18 +146,19 @@
 
     .divider {
         margin: 0 2rem;
-        
+
     }
 
     .cardsContainer {
-        width: calc(100% - 4rem); /* 100% - (2rem × 2 lados) */
+        width: calc(100% - 4rem);
+        /* 100% - (2rem × 2 lados) */
         margin: 0 2rem;
         gap: 2rem;
     }
 
 }
 
-    /* 501 */
+/* 501 */
 @media (max-width: 501px) {
     .title {
         font-weight: 600;

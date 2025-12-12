@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import styles from './inicio.module.css';
 import HomePage from '../sections/inicio/homePage';
 import Cuerpo from '../sections/inicio/cuerpo';
 import Nosotros from '../sections/inicio/nosotros';
@@ -12,7 +13,7 @@ const Inicio = () => {
     }, []);
 
     return (
-        <main>
+        <main className={styles.pageContainer}>
             <HomePage />
             <Cuerpo />
             <Nosotros />
