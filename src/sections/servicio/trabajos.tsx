@@ -3,6 +3,7 @@ import styles from './trabajos.module.css';
 import { BsGear, BsRobot, BsLightning, BsPeople, BsThermometerHalf, BsShieldCheck } from "react-icons/bs";
 import { useBorderRadiusOnScroll } from '../../hooks/useBorderRadiusOnView';
 import { IoArrowForward } from "react-icons/io5";
+import { getImageUrl } from '../../utils/image-helper';
 
 const Trabajos: React.FC = () => {
     const { ref, borderRadius } = useBorderRadiusOnScroll({
@@ -114,6 +115,47 @@ const Trabajos: React.FC = () => {
                     <a href="#" className={styles.learnMore}>
                         Leer más <IoArrowForward className={styles.arrowIcon} />
                     </a>
+                </div>
+            </div>
+
+            {/* Featured Solutions Section */}
+            <div className={styles.featuredSection}>
+                {/* Header con título y navegación */}
+                <div className={styles.featuredHeader}>
+                    <h2 className={styles.featuredTitle}>Soluciones Destacadas</h2>
+                    <div className={styles.navArrows}>
+                        <button className={styles.navArrow} aria-label="Anterior">
+                            <IoArrowForward className={styles.navArrowIcon} style={{ transform: 'rotate(180deg)' }} />
+                        </button>
+                        <button className={styles.navArrow} aria-label="Siguiente">
+                            <IoArrowForward className={styles.navArrowIcon} />
+                        </button>
+                    </div>
+                </div>
+
+                {/* Tarjeta Featured */}
+                <div className={styles.featuredCard}>
+                    <div className={styles.featuredContent}>
+                        <span className={styles.featuredTag}>ALTO IMPACTO</span>
+                        <h3 className={styles.featuredCardTitle}>Gestión de Grupos Electrógenos</h3>
+                        <p className={styles.featuredCardText}>
+                            Elevamos el estándar del mantenimiento convencional mediante el uso de escáneres multimarca y bancos de prueba de carga. No solo cambiamos filtros; realizamos análisis de fluidos y diagnóstico electrónico profundo para detectar fallas incipientes en motores (Cummins, Perkins, CAT) antes de que comprometan su operación crítica.
+                        </p>
+                    </div>
+                    <div className={styles.featuredImageWrapper}>
+                        <img
+                            src={getImageUrl('op.webp')}
+                            alt="Técnico con tablet"
+                            className={styles.featuredImage}
+                        />
+                    </div>
+                </div>
+
+                {/* Indicadores de paginación */}
+                <div className={styles.paginationDots}>
+                    <span className={`${styles.dot} ${styles.dotActive}`}></span>
+                    <span className={styles.dot}></span>
+                    <span className={styles.dot}></span>
                 </div>
             </div>
         </div>
