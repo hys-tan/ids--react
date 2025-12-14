@@ -1,14 +1,35 @@
 .welcomeContainer {
-    position: relative; /* Crucial for positioning the background image */
+    position: relative;
+    /* Crucial for positioning the background image */
     overflow: hidden;
-    width: 100%; /* 100% of the viewport width */
-    min-height: 100dvh; /* 100% of the viewport height */
+    width: 100%;
+    /* 100% of the viewport width */
+    min-height: 100dvh;
+    /* 100% of the viewport height */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #F0F0F0;
     text-align: center;
+    border-radius: 0 0 var(--border-radius, 50px) var(--border-radius, 50px);
+    /* Solo esquinas inferiores - se anima con scroll */
+    z-index: 1;
+    transition: border-radius 0.3s ease-out;
+}
+
+/* Overlay oscuro para el efecto glassmorphism */
+.welcomeContainer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 25, 35, 0.8);
+    /* Overlay azul-oscuro semitransparente */
+    z-index: 0;
+    pointer-events: none;
+    /* border-radius: 0 0 var(--border-radius, 50px) var(--border-radius, 50px); */
+    /* Solo esquinas inferiores - se anima con scroll */
+    transition: border-radius 0.3s ease-out;
 }
 
 .backgroundImage {
@@ -18,7 +39,8 @@
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    filter: blur(8px);
+    filter: blur(3px);
+    /* Blur más sutil para ver los detalles */
     z-index: -1;
     transition: transform 0.1s ease-out;
     transform: scale(var(--zoom-scale, 1.4));
@@ -34,13 +56,15 @@
 .title {
     margin-bottom: 2em;
     margin-top: 4em;
-    font-size: 3rem; /* MEJORA: rem es más predecible que em para títulos principales */
+    font-size: 3rem;
+    /* MEJORA: rem es más predecible que em para títulos principales */
     font-weight: 800;
     font-variation-settings: "wdth" 112;
 }
 
 .description {
-    font-size: 1rem; /* MEJORA: 16px -> 1rem para accesibilidad */
+    font-size: 1rem;
+    /* MEJORA: 16px -> 1rem para accesibilidad */
     font-weight: 300;
     font-variation-settings: "wdth" 112;
     text-shadow: 0px 0px 4px #26272B;
@@ -51,7 +75,8 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%) translateY(0);
-    bottom: 1.875rem; /* MEJORA: 30px -> 1.875rem para que escale */
+    bottom: 1.875rem;
+    /* MEJORA: 30px -> 1.875rem para que escale */
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -59,7 +84,8 @@
     color: var(--icon-color, #F0F0F0);
     font-size: 3rem;
     z-index: 20;
-    pointer-events: none; /* decorativo, no interactuable */
+    pointer-events: none;
+    /* decorativo, no interactuable */
     animation: floatUpDown 2.5s ease-in-out infinite;
 }
 
@@ -71,28 +97,46 @@
 }
 
 @keyframes floatUpDown {
-    0%   { transform: translateX(-50%) translateY(0px); }
-    50%  { transform: translateX(-50%) translateY(8px); }
-    100% { transform: translateX(-50%) translateY(0px); }
+    0% {
+        transform: translateX(-50%) translateY(0px);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(8px);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(0px);
+    }
 }
 
 
 /* RESPONSIVE V */
 
 @media (max-width: 1300px) {
+    .welcomeContainer {
+        border-radius: 0 0 var(--border-radius, 30px) var(--border-radius, 30px);
+    }
+
+    .welcomeContainer::after {
+        border-radius: 0 0 var(--border-radius, 30px) var(--border-radius, 30px);
+    }
+
     .contentWrapper {
         padding: 0 2rem;
     }
 
     .title {
         margin-bottom: 2em;
-        font-size: 2rem; /* MEJORA: rem es más predecible que em */
+        font-size: 2rem;
+        /* MEJORA: rem es más predecible que em */
         font-weight: 700;
         font-variation-settings: "wdth" 112;
     }
 
     .description {
-        font-size: 1rem; /* MEJORA: 16px -> 1rem para accesibilidad */
+        font-size: 1rem;
+        /* MEJORA: 16px -> 1rem para accesibilidad */
         font-weight: 200;
         text-shadow: 0px 0px 4px #26272B;
     }
@@ -102,9 +146,17 @@
     }
 
     @keyframes floatUpDown {
-        0%   { transform: translateX(-50%) translateY(0px); }
-        50%  { transform: translateX(-50%) translateY(10px); }
-        100% { transform: translateX(-50%) translateY(0px); }
+        0% {
+            transform: translateX(-50%) translateY(0px);
+        }
+
+        50% {
+            transform: translateX(-50%) translateY(10px);
+        }
+
+        100% {
+            transform: translateX(-50%) translateY(0px);
+        }
     }
 }
 

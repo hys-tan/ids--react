@@ -10,21 +10,22 @@ import { getImageUrl } from '../../utils/image-helper';
 import styles from './homePage.module.css';
 
 const HomePage: React.FC = () => {
-  const { scale } = useZoomOnScroll();
+  const { scale, borderRadius } = useZoomOnScroll();
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (containerRef.current) {
       containerRef.current.style.setProperty('--zoom-scale', scale.toString());
+      containerRef.current.style.setProperty('--border-radius', `${borderRadius}px`);
     }
-  }, [scale]);
+  }, [scale, borderRadius]);
 
   return (
     <div className={styles.welcomeContainer} ref={containerRef}>
       {/* Contenido de bienvenida */}
-      <img 
-        src={getImageUrl('portada.webp')} 
-        alt="Portada" 
+      <img
+        src={getImageUrl('portada.webp')}
+        alt="Portada"
         className={styles.backgroundImage}
       />
       <div className={styles.contentWrapper}>

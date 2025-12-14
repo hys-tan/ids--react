@@ -1,21 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './cuerpo.module.css';
 import { getImageUrl } from '../../utils/image-helper';
+import { useBorderRadiusOnScroll } from '../../hooks/useBorderRadiusOnView';
 
 const Cuerpo: React.FC = () => {
+  const { ref, borderRadius } = useBorderRadiusOnScroll({
+    maxRadius: 50,
+    maxRadiusMobile: 30,
+    bottomOffset: 50,       // Desktop: coincide con bottom: -50px del ::before
+    bottomOffsetMobile: 30, // Móvil: coincide con bottom: -30px del ::before
+  });
+
+  // Aplicar la variable CSS al contenedor
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.style.setProperty('--border-radius', `${borderRadius}px`);
+    }
+  }, [borderRadius, ref]);
+
   return (
-    <section className={styles.cuerpoContainer}>
+    <section className={styles.cuerpoContainer} ref={ref}>
       <h2 className={styles.title}>Nuestras Soluciones Integrales</h2>
 
       <div className={styles.grid}>
         {/* --- TARJETA 1 --- */}
         <div className={styles.card}>
           <div className={styles.imagePlaceholder}>
-            <img 
+            <img
               src={getImageUrl('electromecanico.webp')}
               alt="Mantenimiento Electromecánico de Grupos Electrógenos y Motores"
               className={styles.cardImage}
-              loading="lazy"/>
+              loading="lazy" />
           </div>
           <h3 className={styles.cardTitle}>Mantenimiento Electromecánico</h3>
           <p className={styles.cardText}>
@@ -25,13 +40,13 @@ const Cuerpo: React.FC = () => {
         </div>
 
         <div className={styles.card}>
-        {/* --- TARJETA 2 --- */}
+          {/* --- TARJETA 2 --- */}
           <div className={styles.imagePlaceholder}>
-            <img 
+            <img
               src={getImageUrl('bombeo.webp')}
               alt="Sistema de Bombeo y Presurización de Agua"
               className={styles.cardImage}
-              loading="lazy"/>
+              loading="lazy" />
           </div>
           <h3 className={styles.cardTitle}>Sistemas de Bombeo y Presurización</h3>
           <p className={styles.cardText}>
@@ -43,11 +58,11 @@ const Cuerpo: React.FC = () => {
         {/* --- TARJETA 3 --- */}
         <div className={styles.card}>
           <div className={styles.imagePlaceholder}>
-            <img 
+            <img
               src={getImageUrl('ats.webp')}
               alt="Tablero de Transferencia Automática ATS"
               className={styles.cardImage}
-              loading="lazy"/>
+              loading="lazy" />
           </div>
           <h3 className={styles.cardTitle}>Sistemas de Transferencia Automática</h3>
           <p className={styles.cardText}>
@@ -59,11 +74,11 @@ const Cuerpo: React.FC = () => {
         {/* --- TARJETA 4 --- */}
         <div className={styles.card}>
           <div className={styles.imagePlaceholder}>
-            <img 
+            <img
               src={getImageUrl('pozo.webp')}
               alt="Sistema HVAC de Climatización y Pozo a Tierra"
               className={styles.cardImage}
-              loading="lazy"/>
+              loading="lazy" />
           </div>
           <h3 className={styles.cardTitle}>Sistemas de Climatización y Seguridad</h3>
           <p className={styles.cardText}>
