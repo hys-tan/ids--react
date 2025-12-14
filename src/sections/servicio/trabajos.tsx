@@ -176,21 +176,30 @@ const Trabajos: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Tarjeta Featured - Slide actual */}
-                <div className={styles.featuredCard}>
-                    <div key={currentSlide} className={styles.featuredContent}>
-                        <span className={styles.featuredTag}>{featuredSlides[currentSlide].tag}</span>
-                        <h3 className={styles.featuredCardTitle}>{featuredSlides[currentSlide].title}</h3>
-                        <p className={styles.featuredCardText}>
-                            {featuredSlides[currentSlide].description}
-                        </p>
-                    </div>
-                    <div className={styles.featuredImageWrapper}>
-                        <img
-                            src={getImageUrl(featuredSlides[currentSlide].image)}
-                            alt={featuredSlides[currentSlide].title}
-                            className={styles.featuredImage}
-                        />
+                {/* Carrusel con efecto slide */}
+                <div className={styles.slidesContainer}>
+                    <div
+                        className={styles.slidesTrack}
+                        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                    >
+                        {featuredSlides.map((slide, index) => (
+                            <div key={index} className={styles.featuredCard}>
+                                <div className={styles.featuredContent}>
+                                    <span className={styles.featuredTag}>{slide.tag}</span>
+                                    <h3 className={styles.featuredCardTitle}>{slide.title}</h3>
+                                    <p className={styles.featuredCardText}>
+                                        {slide.description}
+                                    </p>
+                                </div>
+                                <div className={styles.featuredImageWrapper}>
+                                    <img
+                                        src={getImageUrl(slide.image)}
+                                        alt={slide.title}
+                                        className={styles.featuredImage}
+                                    />
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
 
