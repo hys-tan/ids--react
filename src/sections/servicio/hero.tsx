@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './hero.module.css';
 import { getImageUrl } from '../../utils/image-helper';
 import { BsArrowDownCircleFill } from "react-icons/bs";
+import { useBorderRadiusOnScroll } from '../../hooks/useBorderRadiusOnView';
+import { useZoomOnScroll } from '../../hooks/useZoomOnScroll';
 
 const Hero: React.FC = () => {
+    const { ref, borderRadius } = useBorderRadiusOnScroll({
+        maxRadius: 50,
+        maxRadiusMobile: 30,
+        bottomOffset: 0,
+        bottomOffsetMobile: 0,
+    });
+
+    const { scale } = useZoomOnScroll();
+
+    useEffect(() => {
+        if (ref.current) {
+            ref.current.style.setProperty('--border-radius', `${borderRadius}px`);
+            ref.current.style.setProperty('--zoom-scale', scale.toString());
+        }
+    }, [borderRadius, scale, ref]);
+
     return (
-        <div className={styles.hero}>
+        <div className={styles.hero} ref={ref}>
             {/* SERVICIOS */}
             <img
-                src={getImageUrl('ge.webp')}
+                src={getImageUrl('portada2.webp')}
                 alt="Portada"
                 className={styles.heroImage}
             />

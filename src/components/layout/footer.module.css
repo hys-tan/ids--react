@@ -19,6 +19,10 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
 }
 
 .columnTitle {
@@ -27,6 +31,20 @@
     font-variation-settings: "wdth" 110;
     margin: 0;
     color: #F0F0F0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.columnTitle::before {
+    content: '';
+    width: 4px;
+    height: 1.1em;
+    background-color: #F07E39;
 }
 
 /* Descripción de Acerca de */
@@ -38,6 +56,10 @@
     margin: 0;
     color: #F0F0F0;
     text-align: justify;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 /* Lista de contacto */
@@ -68,6 +90,10 @@
     color: #F0F0F0;
     text-decoration: none;
     transition: color 0.3s ease;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
 }
 
 .contactItem a:hover {
@@ -76,6 +102,10 @@
 
 .contactItem span {
     color: #F0F0F0;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
 }
 
 /* Iconos de redes sociales */
@@ -128,7 +158,7 @@
     font-size: 0.95rem;
     font-weight: 300;
     font-variation-settings: "wdth" 110;
-    color: #F0F0F0;
+    color: #F0F0F0A1;
     margin: 0;
 }
 

@@ -24,7 +24,7 @@ const HomePage: React.FC = () => {
     <div className={styles.welcomeContainer} ref={containerRef}>
       {/* Contenido de bienvenida */}
       <img
-        src={getImageUrl('portada.webp')}
+        src={getImageUrl('portada1.webp')}
         alt="Portada"
         className={styles.backgroundImage}
       />
