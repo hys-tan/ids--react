@@ -1,9 +1,31 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './trabajos.module.css';
 import { BsGear, BsRobot, BsLightning, BsPeople, BsThermometerHalf, BsShieldCheck } from "react-icons/bs";
 import { useBorderRadiusOnScroll } from '../../hooks/useBorderRadiusOnView';
 import { IoArrowForward } from "react-icons/io5";
 import { getImageUrl } from '../../utils/image-helper';
+
+// Datos del carrusel
+const featuredSlides = [
+    {
+        tag: "ALTO IMPACTO",
+        title: "Gestión de Grupos Electrógenos",
+        description: "Elevamos el estándar del mantenimiento convencional mediante el uso de escáneres multimarca y bancos de prueba de carga. No solo cambiamos filtros; realizamos análisis de fluidos y diagnóstico electrónico profundo para detectar fallas incipientes en motores (Cummins, Perkins, CAT) antes de que comprometan su operación crítica.",
+        image: "op.webp"
+    },
+    {
+        tag: "EFICIENCIA",
+        title: "Automatización y Retrofit de Tableros TTA",
+        description: "Desarrollamos ingeniería de detalle para la fabricación de tableros nuevos o la modernización (retrofit) de sistemas obsoletos. Integramos módulos de control de última generación (ComAp, Deep Sea) que permiten monitoreo remoto y gestión eficiente de carga, garantizando cumplimiento estricto con el Código Nacional de Electricidad.",
+        image: "op.webp"
+    },
+    {
+        tag: "INNOVACIÓN",
+        title: "Rebobinado Industrial y Análisis de Vibraciones",
+        description: "Restauramos las condiciones operativas de fábrica utilizando materiales de aislamiento Clase H y barnices de alta resistencia térmica. Nuestro proceso incluye pruebas de megado, análisis de vibraciones y balanceo dinámico para eliminar armónicos y asegurar que el motor opere con la máxima eficiencia energética posible.",
+        image: "op.webp"
+    }
+];
 
 const Trabajos: React.FC = () => {
     const { ref, borderRadius } = useBorderRadiusOnScroll({
@@ -13,12 +35,33 @@ const Trabajos: React.FC = () => {
         bottomOffsetMobile: 0,
     });
 
+    // Estado del carrusel
+    const [currentSlide, setCurrentSlide] = useState(0);
+
     // Aplicar la variable CSS al contenedor
     useEffect(() => {
         if (ref.current) {
             ref.current.style.setProperty('--border-radius', `${borderRadius}px`);
         }
     }, [borderRadius, ref]);
+
+    // Auto-avance del carrusel cada 10 segundos
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % featuredSlides.length);
+        }, 10000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    // Funciones de navegación
+    const nextSlide = () => {
+        setCurrentSlide((prev) => (prev + 1) % featuredSlides.length);
+    };
+
+    const prevSlide = () => {
+        setCurrentSlide((prev) => (prev - 1 + featuredSlides.length) % featuredSlides.length);
+    };
 
     return (
         <div id="trabajos" className={styles.trabajosContainer} ref={ref}>
@@ -118,34 +161,34 @@ const Trabajos: React.FC = () => {
                 </div>
             </div>
 
-            {/* Featured Solutions Section */}
+            {/* Featured Solutions Section - Carrusel */}
             <div className={styles.featuredSection}>
                 {/* Header con título y navegación */}
                 <div className={styles.featuredHeader}>
                     <h2 className={styles.featuredTitle}>Soluciones Destacadas</h2>
                     <div className={styles.navArrows}>
-                        <button className={styles.navArrow} aria-label="Anterior">
+                        <button className={styles.navArrow} aria-label="Anterior" onClick={prevSlide}>
                             <IoArrowForward className={styles.navArrowIcon} style={{ transform: 'rotate(180deg)' }} />
                         </button>
-                        <button className={styles.navArrow} aria-label="Siguiente">
+                        <button className={styles.navArrow} aria-label="Siguiente" onClick={nextSlide}>
                             <IoArrowForward className={styles.navArrowIcon} />
                         </button>
                     </div>
                 </div>
 
-                {/* Tarjeta Featured */}
+                {/* Tarjeta Featured - Slide actual */}
                 <div className={styles.featuredCard}>
-                    <div className={styles.featuredContent}>
-                        <span className={styles.featuredTag}>ALTO IMPACTO</span>
-                        <h3 className={styles.featuredCardTitle}>Gestión de Grupos Electrógenos</h3>
+                    <div key={currentSlide} className={styles.featuredContent}>
+                        <span className={styles.featuredTag}>{featuredSlides[currentSlide].tag}</span>
+                        <h3 className={styles.featuredCardTitle}>{featuredSlides[currentSlide].title}</h3>
                         <p className={styles.featuredCardText}>
-                            Elevamos el estándar del mantenimiento convencional mediante el uso de escáneres multimarca y bancos de prueba de carga. No solo cambiamos filtros; realizamos análisis de fluidos y diagnóstico electrónico profundo para detectar fallas incipientes en motores (Cummins, Perkins, CAT) antes de que comprometan su operación crítica.
+                            {featuredSlides[currentSlide].description}
                         </p>
                     </div>
                     <div className={styles.featuredImageWrapper}>
                         <img
-                            src={getImageUrl('op.webp')}
-                            alt="Técnico con tablet"
+                            src={getImageUrl(featuredSlides[currentSlide].image)}
+                            alt={featuredSlides[currentSlide].title}
                             className={styles.featuredImage}
                         />
                     </div>
@@ -153,9 +196,13 @@ const Trabajos: React.FC = () => {
 
                 {/* Indicadores de paginación */}
                 <div className={styles.paginationDots}>
-                    <span className={`${styles.dot} ${styles.dotActive}`}></span>
-                    <span className={styles.dot}></span>
-                    <span className={styles.dot}></span>
+                    {featuredSlides.map((_, index) => (
+                        <span
+                            key={index}
+                            className={`${styles.dot} ${index === currentSlide ? styles.dotActive : ''}`}
+                            onClick={() => setCurrentSlide(index)}
+                        />
+                    ))}
                 </div>
             </div>
         </div>

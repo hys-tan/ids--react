@@ -220,6 +220,19 @@
     gap: 1rem;
     padding: 2.5rem;
     text-align: left;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .featuredTag {
@@ -276,14 +289,20 @@
 }
 
 .dot {
-    width: 32px;
+    width: 12px;
     height: 6px;
     border-radius: 3px;
     background-color: #3A3B3F;
-    transition: background-color 0.3s ease;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot:hover {
+    background-color: #5A5B5F;
 }
 
 .dotActive {
+    width: 48px;
     background-color: #F07E39;
 }
 
