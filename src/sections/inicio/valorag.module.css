@@ -24,7 +24,7 @@
     width: 100%;
     height: 100px;
     /* Altura suficiente para cubrir el área */
-    background-color: #26272B;
+    background-color: #F07E39;
     z-index: -1;
     /* Entre el body y el contenido */
     transition: border-radius 0.3s ease-out;

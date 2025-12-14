@@ -8,19 +8,19 @@ import { getImageUrl } from '../../utils/image-helper';
 // Datos del carrusel
 const featuredSlides = [
     {
-        tag: "ALTO IMPACTO",
+        tag: "RESPALDO TOTAL",
         title: "Gestión de Grupos Electrógenos",
         description: "Elevamos el estándar del mantenimiento convencional mediante el uso de escáneres multimarca y bancos de prueba de carga. No solo cambiamos filtros; realizamos análisis de fluidos y diagnóstico electrónico profundo para detectar fallas incipientes en motores (Cummins, Perkins, CAT) antes de que comprometan su operación crítica.",
         image: "op.webp"
     },
     {
-        tag: "EFICIENCIA",
+        tag: "AUTOMATIZACIÓN",
         title: "Automatización y Retrofit de Tableros TTA",
         description: "Desarrollamos ingeniería de detalle para la fabricación de tableros nuevos o la modernización (retrofit) de sistemas obsoletos. Integramos módulos de control de última generación (ComAp, Deep Sea) que permiten monitoreo remoto y gestión eficiente de carga, garantizando cumplimiento estricto con el Código Nacional de Electricidad.",
         image: "op.webp"
     },
     {
-        tag: "INNOVACIÓN",
+        tag: "ALTA EFICIENCIA",
         title: "Rebobinado Industrial y Análisis de Vibraciones",
         description: "Restauramos las condiciones operativas de fábrica utilizando materiales de aislamiento Clase H y barnices de alta resistencia térmica. Nuestro proceso incluye pruebas de megado, análisis de vibraciones y balanceo dinámico para eliminar armónicos y asegurar que el motor opere con la máxima eficiencia energética posible.",
         image: "op.webp"
@@ -180,7 +180,7 @@ const Trabajos: React.FC = () => {
                 <div className={styles.slidesContainer}>
                     <div
                         className={styles.slidesTrack}
-                        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                        style={{ transform: `translateX(calc(-${currentSlide} * (100% + 2rem)))` }}
                     >
                         {featuredSlides.map((slide, index) => (
                             <div key={index} className={styles.featuredCard}>

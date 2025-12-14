@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import Hero from '../sections/servicio/hero';
 import Trabajos from '../sections/servicio/trabajos';
+import Accion from '../sections/servicio/accion';
 
 const Servicios = () => {
     useEffect(() => {
@@ -11,6 +12,7 @@ const Servicios = () => {
         <main>
             <Hero />
             <Trabajos />
+            <Accion />
             {/* Aquí agregarás más secciones de servicios en el futuro */}
         </main>
     );
