@@ -1,6 +1,6 @@
 .trabajosContainer {
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -18,11 +18,11 @@
 .trabajosContainer::before {
     content: '';
     position: absolute;
-    bottom: -50px;
+    top: -50px;
     left: 0;
     width: 100%;
     height: 100px;
-    background-color: #F0F0F0;
+    background-color: #26272B;
     z-index: -1;
     transition: border-radius 0.3s ease-out;
 }
@@ -55,7 +55,7 @@
     font-variation-settings: "wdth" 110;
     line-height: 1.7;
     margin: 0;
-    text-align: left;
+    text-align: justify;
     color: #A7A8A9;
 }
 
@@ -144,4 +144,43 @@
 
 .learnMore:hover .arrowIcon {
     transform: translateX(4px);
+}
+
+@media (max-width: 1300px) {
+    .trabajosContainer::before {
+        top: -30px;  /* Coincidir con el border-radius móvil */
+        height: 60px;
+    }
+
+    .headerSection {
+        padding: 0 2rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .cardsGrid {
+        padding: 0 2rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    .cardsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 501px) {
+    .title {
+        font-weight: 600;
+    }
+
+    .cardsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .cardText {
+        text-align: justify;
+    }
 }
