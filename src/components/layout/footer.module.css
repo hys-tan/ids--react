@@ -161,6 +161,7 @@
     font-variation-settings: "wdth" 110;
     color: #A7A8A9;
     margin: 0;
+    line-height: 1.7;
 }
 
 /* Responsive */
@@ -180,5 +181,33 @@
 
     .footerLogo {
         display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    .columnTitle {
+        font-size: 1rem;
+    }
+
+    .description {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 501px) {
+    .columnTitle {
+        font-size: 0.95rem;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+
+    .contactItem {
+        font-size: 0.9rem;
+    }
+
+    .copyright p {
+        font-size: 0.9rem;
     }
 }
