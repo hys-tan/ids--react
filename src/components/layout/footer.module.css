@@ -54,7 +54,7 @@
     font-variation-settings: "wdth" 110;
     line-height: 1.7;
     margin: 0;
-    color: #F0F0F0;
+    color: #A7A8A9;
     text-align: justify;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -83,11 +83,11 @@
     font-size: 0.875rem;
     flex-shrink: 0;
     margin-top: 0.4rem;
-    color: #F0F0F0;
+    color: #A7A8A9;
 }
 
 .contactItem a {
-    color: #F0F0F0;
+    color: #A7A8A9;
     text-decoration: none;
     transition: color 0.3s ease;
     -webkit-user-select: text;
@@ -97,11 +97,11 @@
 }
 
 .contactItem a:hover {
-    color: #F07E39;
+    color: #F0F0F0;
 }
 
 .contactItem span {
-    color: #F0F0F0;
+    color: #A7A8A9;
     -webkit-user-select: text;
     -moz-user-select: text;
     -ms-user-select: text;
@@ -120,9 +120,9 @@
     justify-content: center;
     width: 40px;
     height: 40px;
-    border: 2px solid #F0F0F0;
+    border: 2px solid #A7A8A9;
     border-radius: 50%;
-    color: #F0F0F0;
+    color: #A7A8A9;
     text-decoration: none;
     transition: all 0.4s ease;
     font-size: 1.2rem;
@@ -131,6 +131,7 @@
 .socialIcon:hover {
     background-color: #F0F0F0;
     color: #26272B;
+    border-color: #F0F0F0
 }
 
 /* Logo del footer */
@@ -158,7 +159,7 @@
     font-size: 0.95rem;
     font-weight: 300;
     font-variation-settings: "wdth" 110;
-    color: #F0F0F0A1;
+    color: #A7A8A9;
     margin: 0;
 }
 

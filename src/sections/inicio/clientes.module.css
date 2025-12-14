@@ -83,9 +83,9 @@
     }
 
     .logosGrid {
-        grid-template-columns: repeat(2, 1fr);
+        /* grid-template-columns: repeat(6, 1fr); */
         gap: 2rem;
-        max-width: 600px;
+        max-width: auto;
     }
 
     .logoItem {
@@ -94,6 +94,12 @@
 
     .logoImage {
         height: 60px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .logosGrid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 

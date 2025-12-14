@@ -50,12 +50,13 @@
     font-weight: 300;
     font-variation-settings: "wdth" 110;
     margin: 0;
+    color: #A7A8A9;
 }
 
 /* Línea horizontal separadora */
 .divider {
     border: none;
-    border-top: 2px solid #f0f0f053;
+    border-top: 2px solid #A7A8A953;
     margin: 0;
     width: auto;
     border-radius: 10px;
@@ -65,20 +66,21 @@
 .cardsContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 2rem;
     width: 100%;
 }
 
 /* Tarjeta individual */
 .card {
-    background-color: #3A3B3F;
+    background-color: #1E2024;
     padding: 2rem 1.5rem;
-    border-radius: 6px;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 2rem;
+    border: 1px solid #3A3B3F;
 }
 
 /* Contenedor del icono */
@@ -86,13 +88,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 0.5rem;
+    /* margin-bottom: 0.5rem; */
+    width: 70px;
+    height: 70px;
+    background-color: #2A2D32;
+    border-radius: 8px;
 }
 
 /* Icono */
 .icon {
-    font-size: 3rem;
-    color: #F0F0F0;
+    font-size: 2.188rem;
+    color: #F07E39;
 }
 
 /* Título de la tarjeta */
@@ -109,7 +115,7 @@
     font-size: 0.95rem;
     font-weight: 300;
     font-variation-settings: "wdth" 110;
-    color: #F0F0F0;
+    color: #A7A8A9;
     line-height: 1.7;
     margin: 0;
 }

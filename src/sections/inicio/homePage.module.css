@@ -60,6 +60,7 @@
     /* MEJORA: rem es más predecible que em para títulos principales */
     font-weight: 800;
     font-variation-settings: "wdth" 112;
+    line-height: 1.3;
 }
 
 .description {

@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
             />
             <div className={styles.content}>
                 <h1 className={styles.title}>
-                    Servicios Técnicos Especializados para la Continuidad de sus Operaciones
+                    Servicio Técnico Especializado en Grupos Electrógenos y Electricidad Industrial
                 </h1>
                 <p className={styles.description}>
                     Garantizamos la continuidad operativa de sus equipos críticos mediante mantenimiento especializado en sistemas eléctricos, electromecánicos y HVAC. Atención inmediata y soporte técnico 24/7.

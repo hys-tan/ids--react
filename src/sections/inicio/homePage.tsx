@@ -29,7 +29,7 @@ const HomePage: React.FC = () => {
         className={styles.backgroundImage}
       />
       <div className={styles.contentWrapper}>
-        <h1 className={styles.title}>Servicio Técnico Especializado</h1>
+        <h1 className={styles.title}>Soluciones Integrales en Energía y Continuidad Operativa 24/7</h1>
         <p className={styles.description}>Somos una empresa especializada en servicios técnicos integrales, ofreciendo mantenimiento preventivo y correctivo, grupos electrógenos, fabricación de tableros de transferencia y mantenimiento de motores eléctricos.</p>
       </div>
 

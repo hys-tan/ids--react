@@ -68,7 +68,7 @@
 .cardsGrid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 3rem;
+    gap: 2rem;
     width: 100%;
     max-width: 112.5rem;
     padding: 0 7rem;
@@ -78,12 +78,13 @@
 .card {
     background-color: #DADADA;
     padding: 2.5rem 2rem;
-    border-radius: 6px;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 2rem;
+    border: 1px solid #A7A8A9;
 }
 
 /* Contenedor del icono */
@@ -91,12 +92,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 70px;
+    height: 70px;
+    background-color: #aaaaaa;
+    border-radius: 8px;
 }
 
 /* Icono */
 .icon {
-    font-size: 3rem;
-    color: #26272B;
+    font-size: 2.188rem;
+    color: #DADADA;
 }
 
 /* Título de la tarjeta */

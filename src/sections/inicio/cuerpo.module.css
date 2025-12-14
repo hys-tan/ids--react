@@ -46,7 +46,7 @@
     display: grid;
     /* Forzamos una cuadrícula de 2 columnas de igual tamaño */
     grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
+    gap: 2rem;
     width: 100%;
     max-width: 112.5rem;
     /* MEJORA: 1800px -> 112.5rem. Más consistente. */
@@ -73,7 +73,7 @@
     aspect-ratio: 16 / 6;
     /* MEJORA: Mantiene la proporción sin importar el ancho. */
     border: 1px solid #A7A8A9;
-    border-radius: 5px;
+    border-radius: 8px;
     overflow: hidden;
     /* Esto es clave para que la imagen respete los bordes redondeados */
     display: flex;
