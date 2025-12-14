@@ -9,8 +9,12 @@
     background-color: #26272B;
     color: #F0F0F0;
     text-align: center;
-    padding: 3rem 0;
+    padding: 2.25rem 0;
     gap: 4rem;
+    /*
+    border-radius: 0 0 var(--border-radius, 50px) var(--border-radius, 50px);
+    transition: border-radius 0.3s ease-out;
+    */
 }
 
 /* Contenedor del h2 y botón */
@@ -97,6 +101,12 @@
 */
 
 @media (max-width: 1300px) {
+    /*
+    .expertosContainer {
+        border-radius: 0 0 var(--border-radius, 30px) var(--border-radius, 30px);
+    }
+    */
+
     .contentWrapper {
         flex-direction: column;
         padding: 0 2rem;
@@ -117,12 +127,18 @@
 */
 }
 
+@media (max-width: 526px) {
+    .title {
+        font-size: 1.15rem;
+    }
+}
+
 @media (max-width: 501px) {
     .expertosContainer {
-        padding: 2.25rem 0;
+        padding: 2rem 0;
     }
     .title {
-        font-size: 1rem;
+        font-size: 1.05rem;
         font-weight: 600;
     }
 }

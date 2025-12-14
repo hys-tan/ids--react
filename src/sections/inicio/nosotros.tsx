@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './nosotros.module.css';
 import { GoGoal, GoLightBulb } from "react-icons/go";
+import { useBorderRadiusOnScroll } from '../../hooks/useBorderRadiusOnView';
 
 const Nosotros: React.FC = () => {
+    const { ref, borderRadius } = useBorderRadiusOnScroll({
+        maxRadius: 50,
+        maxRadiusMobile: 30,
+        bottomOffset: 0,       // Sin offset adicional (border-radius en todas las esquinas)
+        bottomOffsetMobile: 0,
+    });
+
+    // Aplicar la variable CSS al contenedor
+    useEffect(() => {
+        if (ref.current) {
+            ref.current.style.setProperty('--border-radius', `${borderRadius}px`);
+        }
+    }, [borderRadius, ref]);
+
     return (
-        <div className={styles.nosotrosContainer}>
+        <div className={styles.nosotrosContainer} ref={ref}>
 
             {/* Contenedor principal */}
             <div className={styles.contentWrapper}>

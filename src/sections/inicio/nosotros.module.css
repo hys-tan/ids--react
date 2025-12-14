@@ -11,6 +11,8 @@
     color: #F0F0F0;
     text-align: center;
     padding: 4rem 7rem;
+    border-radius: 0 0 var(--border-radius, 50px) var(--border-radius, 50px);
+    transition: border-radius 0.3s ease-out;
 }
 
 /* Contenedor principal */
@@ -117,6 +119,7 @@
 @media (max-width: 1300px) {
     .nosotrosContainer {
         padding: 4rem 0;
+        border-radius: 0 0 var(--border-radius, 30px) var(--border-radius, 30px);
     }
 
     .textColumn {
@@ -136,7 +139,6 @@
 
     .divider {
         margin: 0 2rem;
-        
     }
 
     .cardsContainer {
