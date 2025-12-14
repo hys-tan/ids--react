@@ -37,7 +37,14 @@ const Hero: React.FC = () => {
                 <p className={styles.description}>
                     Garantizamos la continuidad operativa de sus equipos críticos mediante mantenimiento especializado en sistemas eléctricos, electromecánicos y HVAC. Atención inmediata y soporte técnico 24/7.
                 </p>
-                <a href="#servicios" className={styles.infoButton}>
+                <a
+                    href="#trabajos"
+                    className={styles.infoButton}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        document.getElementById('trabajos')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                >
                     Más Información
                     <BsArrowDownCircleFill />
                 </a>

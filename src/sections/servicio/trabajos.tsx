@@ -20,7 +20,7 @@ const Trabajos: React.FC = () => {
     }, [borderRadius, ref]);
 
     return (
-        <div className={styles.trabajosContainer} ref={ref}>
+        <div id="trabajos" className={styles.trabajosContainer} ref={ref}>
 
             {/* Título y descripción */}
             <div className={styles.headerSection}>
