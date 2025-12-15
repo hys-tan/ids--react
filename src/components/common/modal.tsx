@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import styles from './modal.module.css';
 import { IoClose, IoCheckmarkCircle } from 'react-icons/io5';
 import { getImageUrl } from '../../utils/image-helper';
@@ -56,7 +57,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         'Soporte de Emergencia 24/7'
     ];
 
-    return (
+    return createPortal(
         <div
             className={`${styles.overlay} ${isClosing ? styles.overlayClosing : ''}`}
             onClick={handleOverlayClick}
@@ -118,7 +119,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div>,
+        document.body
     );
 };
 
