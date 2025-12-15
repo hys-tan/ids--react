@@ -1,6 +1,6 @@
 .accionSection {
     width: 100%;
-    background-color: #F07E39;
+    background: linear-gradient(120deg, #F07E39 75%, #F3813B 25%);
     padding: 3rem 0;
 }
 

@@ -49,7 +49,7 @@
 
 /* Descripción de Acerca de */
 .description {
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 300;
     font-variation-settings: "wdth" 110;
     line-height: 1.7;
@@ -73,7 +73,7 @@
     display: flex;
     align-items: flex-start;
     gap: 0.8rem;
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 300;
     font-variation-settings: "wdth" 110;
     line-height: 1.7;

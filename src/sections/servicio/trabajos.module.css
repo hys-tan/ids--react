@@ -144,6 +144,10 @@
     text-decoration: none;
     transition: color 0.3s ease;
     margin-top: 0.5rem;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
 
 .learnMore:hover {
@@ -526,6 +530,7 @@
     .title {
         font-size: 1.4rem;
     }
+
     .featuredTitle {
         font-size: 1.4rem;
     }

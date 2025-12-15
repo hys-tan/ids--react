@@ -4,6 +4,7 @@ import { BsGear, BsRobot, BsLightning, BsPeople, BsThermometerHalf, BsShieldChec
 import { useBorderRadiusOnScroll } from '../../hooks/useBorderRadiusOnView';
 import { IoArrowForward } from "react-icons/io5";
 import { getImageUrl } from '../../utils/image-helper';
+import Modal from '../../components/common/modal';
 
 // Datos del carrusel
 const featuredSlides = [
@@ -37,6 +38,9 @@ const Trabajos: React.FC = () => {
 
     // Estado del carrusel
     const [currentSlide, setCurrentSlide] = useState(0);
+
+    // Estado del modal
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     // Aplicar la variable CSS al contenedor
     useEffect(() => {
@@ -85,9 +89,12 @@ const Trabajos: React.FC = () => {
                     <p className={styles.cardText}>
                         Servicio técnico preventivo y correctivo multimarca (Cummins, Perkins, CAT) para asegurar su energía.
                     </p>
-                    <a href="#" className={styles.learnMore}>
+                    <button
+                        className={styles.learnMore}
+                        onClick={() => setIsModalOpen(true)}
+                    >
                         Leer más <IoArrowForward className={styles.arrowIcon} />
-                    </a>
+                    </button>
                 </div>
 
                 {/* Tarjeta 2: Industrial Automation */}
@@ -214,6 +221,9 @@ const Trabajos: React.FC = () => {
                     ))}
                 </div>
             </div>
+
+            {/* Modal */}
+            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </div>
     );
 };
