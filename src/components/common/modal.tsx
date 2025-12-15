@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './modal.module.css';
 import { IoClose, IoCheckmarkCircle } from 'react-icons/io5';
 import { getImageUrl } from '../../utils/image-helper';
@@ -9,7 +9,45 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
-    if (!isOpen) return null;
+    const [isClosing, setIsClosing] = useState(false);
+    const [shouldRender, setShouldRender] = useState(false);
+
+    useEffect(() => {
+        if (isOpen) {
+            setShouldRender(true);
+            setIsClosing(false);
+        }
+    }, [isOpen]);
+
+    // Bloquear scroll cuando el modal está abierto
+    useEffect(() => {
+        if (shouldRender) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+
+        // Cleanup al desmontar
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [shouldRender]);
+
+    const handleClose = () => {
+        setIsClosing(true);
+        setTimeout(() => {
+            setShouldRender(false);
+            onClose();
+        }, 200); // Duración de la animación
+    };
+
+    const handleOverlayClick = (e: React.MouseEvent) => {
+        if (e.target === e.currentTarget) {
+            handleClose();
+        }
+    };
+
+    if (!shouldRender) return null;
 
     const serviceInclusions = [
         'Mantenimiento Preventivo y Correctivo',
@@ -19,12 +57,15 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     ];
 
     return (
-        <div className={styles.overlay} onClick={onClose}>
-            <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+        <div
+            className={`${styles.overlay} ${isClosing ? styles.overlayClosing : ''}`}
+            onClick={handleOverlayClick}
+        >
+            <div className={`${styles.modal} ${isClosing ? styles.modalClosing : ''}`}>
                 {/* Header */}
                 <div className={styles.header}>
                     <h2 className={styles.title}>Mantenimiento Electromecánico</h2>
-                    <button className={styles.closeButton} onClick={onClose} aria-label="Cerrar modal">
+                    <button className={styles.closeButton} onClick={handleClose} aria-label="Cerrar modal">
                         <IoClose />
                     </button>
                 </div>
