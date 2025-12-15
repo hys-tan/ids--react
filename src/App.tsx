@@ -10,6 +10,7 @@ import { useEffect } from 'react';
 // Importar páginas
 import Inicio from './pages/inicio';
 import Servicios from './pages/servicios';
+import Repuestos from './pages/repuestos';
 import Nosotros from './pages/nosotros';
 import Contacto from './pages/contacto';
 
@@ -38,6 +39,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route path="/servicios" element={<Servicios />} />
+          <Route path="/repuestos" element={<Repuestos />} />
           <Route path="/nosotros" element={<Nosotros />} />
           <Route path="/contacto" element={<Contacto />} />
         </Routes>

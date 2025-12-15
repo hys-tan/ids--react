@@ -61,6 +61,7 @@ const Navbar: React.FC = () => {
           <ul className={styles.navLinks}>
             <li><Link to="/" onClick={closeMenu}>Inicio</Link></li>
             <li><Link to="/servicios" onClick={closeMenu}>Servicios</Link></li>
+            <li> <Link to="/repuestos" onClick={closeMenu}>Repuestos</Link></li>
             <li><Link to="/nosotros" onClick={closeMenu}>Nosotros</Link></li>
             <li><Link to="/contacto" onClick={closeMenu}>Contáctanos</Link></li>
           </ul>
