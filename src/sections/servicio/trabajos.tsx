@@ -39,8 +39,8 @@ const Trabajos: React.FC = () => {
     // Estado del carrusel
     const [currentSlide, setCurrentSlide] = useState(0);
 
-    // Estado del modal
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    // Estado del modal (null = cerrado, número = índice del modal abierto)
+    const [activeModal, setActiveModal] = useState<number | null>(null);
 
     // Aplicar la variable CSS al contenedor
     useEffect(() => {
@@ -91,7 +91,7 @@ const Trabajos: React.FC = () => {
                     </p>
                     <button
                         className={styles.learnMore}
-                        onClick={() => setIsModalOpen(true)}
+                        onClick={() => setActiveModal(0)}
                     >
                         Leer más <IoArrowForward className={styles.arrowIcon} />
                     </button>
@@ -106,9 +106,12 @@ const Trabajos: React.FC = () => {
                     <p className={styles.cardText}>
                         Diseño, fabricación e instalación de tableros TTA y distribución eléctrica a medida.
                     </p>
-                    <a href="#" className={styles.learnMore}>
+                    <button
+                        className={styles.learnMore}
+                        onClick={() => setActiveModal(1)}
+                    >
                         Leer más <IoArrowForward className={styles.arrowIcon} />
-                    </a>
+                    </button>
                 </div>
 
                 {/* Tarjeta 3: Energy Efficiency */}
@@ -120,9 +123,12 @@ const Trabajos: React.FC = () => {
                     <p className={styles.cardText}>
                         Mantenimiento y rebobinado profesional para garantizar la eficiencia de sus activos.
                     </p>
-                    <a href="#" className={styles.learnMore}>
+                    <button
+                        className={styles.learnMore}
+                        onClick={() => setActiveModal(2)}
+                    >
                         Leer más <IoArrowForward className={styles.arrowIcon} />
-                    </a>
+                    </button>
                 </div>
 
                 {/* Tarjeta 4: Technical Consulting */}
@@ -134,9 +140,12 @@ const Trabajos: React.FC = () => {
                     <p className={styles.cardText}>
                         Venta, instalación y mantenimiento de sistemas de bombeo y presión constante.
                     </p>
-                    <a href="#" className={styles.learnMore}>
+                    <button
+                        className={styles.learnMore}
+                        onClick={() => setActiveModal(3)}
+                    >
                         Leer más <IoArrowForward className={styles.arrowIcon} />
-                    </a>
+                    </button>
                 </div>
 
                 {/* Tarjeta 5: Industrial HVAC */}
@@ -148,9 +157,12 @@ const Trabajos: React.FC = () => {
                     <p className={styles.cardText}>
                         Suministro y mantenimiento de ventilación industrial y climatización.
                     </p>
-                    <a href="#" className={styles.learnMore}>
+                    <button
+                        className={styles.learnMore}
+                        onClick={() => setActiveModal(4)}
+                    >
                         Leer más <IoArrowForward className={styles.arrowIcon} />
-                    </a>
+                    </button>
                 </div>
 
                 {/* Tarjeta 6: Safety Systems */}
@@ -162,9 +174,12 @@ const Trabajos: React.FC = () => {
                     <p className={styles.cardText}>
                         Instalación, medición y mantenimiento de sistemas de puesta a tierra con certificación.
                     </p>
-                    <a href="#" className={styles.learnMore}>
+                    <button
+                        className={styles.learnMore}
+                        onClick={() => setActiveModal(5)}
+                    >
                         Leer más <IoArrowForward className={styles.arrowIcon} />
-                    </a>
+                    </button>
                 </div>
             </div>
 
@@ -223,7 +238,11 @@ const Trabajos: React.FC = () => {
             </div>
 
             {/* Modal */}
-            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+            <Modal
+                isOpen={activeModal !== null}
+                onClose={() => setActiveModal(null)}
+                modalIndex={activeModal ?? 0}
+            />
         </div>
     );
 };
