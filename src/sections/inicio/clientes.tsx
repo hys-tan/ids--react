@@ -1,22 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './clientes.module.css';
 import { getImageUrl } from '../../utils/image-helper';
-import { useBorderRadiusOnScroll } from '../../hooks/useBorderRadiusOnView';
 
 const Clientes: React.FC = () => {
-    const { ref, borderRadius } = useBorderRadiusOnScroll({
-        maxRadius: 50,
-        maxRadiusMobile: 30,
-        bottomOffset: 0,
-        bottomOffsetMobile: 0,
-    });
-
-    useEffect(() => {
-        if (ref.current) {
-            ref.current.style.setProperty('--border-radius', `${borderRadius}px`);
-        }
-    }, [borderRadius, ref]);
-
     const clientLogos = [
         { file: 'aap.webp', name: 'AAP Industrial' },
         { file: 'frioa.webp', name: 'Frioa' },
@@ -27,7 +13,7 @@ const Clientes: React.FC = () => {
     ];
 
     return (
-        <div className={styles.clientesContainer} ref={ref}>
+        <div className={styles.clientesContainer}>
             <h2 className={styles.title}>Nuestros Clientes</h2>
 
             <div className={styles.logosGrid}>

@@ -1,25 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './valorag.module.css';
 import { BsClock, BsShieldCheck, BsPersonCheck, BsSpeedometer2 } from "react-icons/bs";
-import { useBorderRadiusOnScroll } from '../../hooks/useBorderRadiusOnView';
 
 const Valorag: React.FC = () => {
-    const { ref, borderRadius } = useBorderRadiusOnScroll({
-        maxRadius: 50,
-        maxRadiusMobile: 30,
-        bottomOffset: 0,
-        bottomOffsetMobile: 0,
-    });
-
-    // Aplicar la variable CSS al contenedor
-    useEffect(() => {
-        if (ref.current) {
-            ref.current.style.setProperty('--border-radius', `${borderRadius}px`);
-        }
-    }, [borderRadius, ref]);
-
     return (
-        <div className={styles.valorContainer} ref={ref}>
+        <div className={styles.valorContainer}>
 
             {/* Título y descripción */}
             <div className={styles.headerSection}>

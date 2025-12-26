@@ -1,46 +1,37 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import type { RefObject } from 'react';
 
-interface UseBorderRadiusOnScrollOptions {
-    /** Border radius máximo inicial (en px). Default: 50 */
+interface UseFooterBorderRadiusOptions {
+    /** Border radius máximo final (en px). Default: 50 */
     maxRadius?: number;
     /** Border radius máximo en móvil <= 1300px (en px). Default: 30 */
     maxRadiusMobile?: number;
-    /** Offset adicional para el punto de activación en desktop (px). Default: 50 */
-    bottomOffset?: number;
-    /** Offset adicional para el punto de activación en móvil (px). Default: 30 */
-    bottomOffsetMobile?: number;
 }
 
-interface UseBorderRadiusOnScrollReturn {
-    /** Ref que debe aplicarse al elemento a observar */
-    ref: RefObject<HTMLDivElement | null>;
+interface UseFooterBorderRadiusReturn {
+    /** Ref que debe aplicarse al footer */
+    ref: RefObject<HTMLElement | null>;
     /** Valor actual del border-radius en px */
     borderRadius: number;
-    /** Si el área del ::before está en el viewport */
-    isInView: boolean;
 }
 
 /**
- * Hook que anima el border-radius basado en cuando el BOTTOM del elemento
- * (donde está el ::before) entra en el viewport.
+ * Hook que anima el border-radius del footer.
  * 
- * - Cuando el bottom del elemento está fuera del viewport → border-radius = maxRadius
- * - A medida que el bottom entra y sube en el viewport → border-radius disminuye a 0
+ * Comportamiento INVERSO:
+ * - Cuando el footer NO está visible → border-radius = 0
+ * - A medida que el footer entra en el viewport → border-radius aumenta hasta maxRadius
  */
-export const useBorderRadiusOnScroll = (
-    options: UseBorderRadiusOnScrollOptions = {}
-): UseBorderRadiusOnScrollReturn => {
+export const useFooterBorderRadius = (
+    options: UseFooterBorderRadiusOptions = {}
+): UseFooterBorderRadiusReturn => {
     const {
         maxRadius = 50,
-        maxRadiusMobile = 30,
-        bottomOffset = 50,
-        bottomOffsetMobile = 30,
+        maxRadiusMobile = 20,
     } = options;
 
-    const ref = useRef<HTMLDivElement>(null);
-    const [borderRadius, setBorderRadius] = useState(maxRadius);
-    const [isInView, setIsInView] = useState(false);
+    const ref = useRef<HTMLElement>(null);
+    const [borderRadius, setBorderRadius] = useState(0);
 
     // Determinar el radio máximo según el tamaño de pantalla
     const getMaxRadius = useCallback(() => {
@@ -49,14 +40,6 @@ export const useBorderRadiusOnScroll = (
         }
         return maxRadius;
     }, [maxRadius, maxRadiusMobile]);
-
-    // Determinar el offset según el tamaño de pantalla
-    const getBottomOffset = useCallback(() => {
-        if (typeof window !== 'undefined') {
-            return window.innerWidth <= 1300 ? bottomOffsetMobile : bottomOffset;
-        }
-        return bottomOffset;
-    }, [bottomOffset, bottomOffsetMobile]);
 
     useEffect(() => {
         const element = ref.current;
@@ -67,36 +50,32 @@ export const useBorderRadiusOnScroll = (
             const windowHeight = window.innerHeight;
             const currentMaxRadius = getMaxRadius();
 
-            // Punto de referencia: el bottom del elemento + offset (donde está ::before)
-            const targetPoint = rect.bottom + getBottomOffset();
+            // Punto de referencia: el TOP del footer
+            const footerTop = rect.top;
 
-            // El ::before está visible si su posición está dentro del viewport
-            const isBeforeVisible = targetPoint > 0 && targetPoint < windowHeight + 200;
-            setIsInView(isBeforeVisible);
-
-            // Si el bottom + offset aún está por debajo del viewport (no visible)
-            // → mantener border-radius máximo
-            if (targetPoint >= windowHeight) {
-                setBorderRadius(currentMaxRadius);
-                return;
-            }
-
-            // Si el bottom + offset ya subió mucho (está en el 50% del viewport o más arriba)
+            // Si el footer aún no es visible (está por debajo del viewport)
             // → border-radius = 0
-            const triggerEnd = windowHeight * 0.5;
-            if (targetPoint <= triggerEnd) {
+            if (footerTop >= windowHeight) {
                 setBorderRadius(0);
                 return;
             }
 
+            // Si el footer ya subió bastante (su top está en el 30% inferior del viewport o más arriba)
+            // → border-radius = maxRadius
+            const triggerEnd = windowHeight * 0.7;
+            if (footerTop <= triggerEnd) {
+                setBorderRadius(currentMaxRadius);
+                return;
+            }
+
             // Calcular el progreso entre los puntos
-            // targetPoint = windowHeight → progress = 0 → radius = max
-            // targetPoint = triggerEnd → progress = 1 → radius = 0
-            const scrollProgress = (windowHeight - targetPoint) / (windowHeight - triggerEnd);
+            // footerTop = windowHeight → progress = 0 → radius = 0
+            // footerTop = triggerEnd → progress = 1 → radius = max
+            const scrollProgress = (windowHeight - footerTop) / (windowHeight - triggerEnd);
             const clampedProgress = Math.max(0, Math.min(1, scrollProgress));
 
-            // border-radius disminuye conforme aumenta el progreso
-            const newRadius = currentMaxRadius * (1 - clampedProgress);
+            // border-radius AUMENTA conforme aumenta el progreso (inverso)
+            const newRadius = currentMaxRadius * clampedProgress;
             setBorderRadius(newRadius);
         };
 
@@ -111,7 +90,7 @@ export const useBorderRadiusOnScroll = (
             window.removeEventListener('scroll', calculateBorderRadius);
             window.removeEventListener('resize', calculateBorderRadius);
         };
-    }, [getMaxRadius, getBottomOffset]);
+    }, [getMaxRadius]);
 
-    return { ref, borderRadius, isInView };
+    return { ref, borderRadius };
 };

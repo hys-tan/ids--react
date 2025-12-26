@@ -7,12 +7,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #26272B;
-    color: #F0F0F0;
+    background-color: #F0F0F0;
+    color: #26272B;
     text-align: center;
     padding: 4rem 7rem;
-    border-radius: 0 0 var(--border-radius, 50px) var(--border-radius, 50px);
-    transition: border-radius 0.3s ease-out;
+    border-top: 0.5px solid #AAAAAA;
+    border-bottom: 0.5px solid #AAAAAA;
 }
 
 /* Contenedor principal */
@@ -28,7 +28,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 3rem;              /* =======================*/
+    gap: 2rem;              /* =======================*/
     text-align: left;
 }
 
@@ -39,7 +39,7 @@
     font-variation-settings: "wdth" 112;
     margin: 0;
     position: relative;
-    text-align: center;
+    text-align: left;
     line-height: 1.4;
 }
 
@@ -51,13 +51,13 @@
     font-weight: 300;
     font-variation-settings: "wdth" 110;
     margin: 0;
-    color: #A7A8A9;
+    color: #26272B;
 }
 
 /* Línea horizontal separadora */
 .divider {
     border: none;
-    border-top: 2px solid #A7A8A953;
+    border-top: 2px solid #AAAAAA77;
     margin: 0;
     width: auto;
     border-radius: 10px;
@@ -73,7 +73,7 @@
 
 /* Tarjeta individual */
 .card {
-    background-color: #1E2024;
+    background-color: #DADADA;
     padding: 2rem 1.5rem;
     border-radius: 8px;
     display: flex;
@@ -81,7 +81,7 @@
     align-items: center;
     text-align: center;
     gap: 2rem;
-    border: 1px solid #3A3B3F;
+    border: 1px solid #A7A8A9;
 }
 
 /* Contenedor del icono */
@@ -92,14 +92,14 @@
     /* margin-bottom: 0.5rem; */
     width: 70px;
     height: 70px;
-    background-color: #2A2D32;
+    background-color: #aaaaaa;
     border-radius: 8px;
 }
 
 /* Icono */
 .icon {
     font-size: 2.188rem;
-    color: #F07E39;
+    color: #DADADA;
 }
 
 /* Título de la tarjeta */
@@ -107,7 +107,7 @@
     font-size: 1.1rem;
     font-weight: 600;
     font-variation-settings: "wdth" 110;
-    color: #F0F0F0;
+    color: #26272B;
     margin: 0;
 }
 
@@ -116,7 +116,7 @@
     font-size: 0.95rem;
     font-weight: 300;
     font-variation-settings: "wdth" 110;
-    color: #A7A8A9;
+    color: #26272B;
     line-height: 1.7;
     margin: 0;
 }
@@ -126,11 +126,10 @@
 @media (max-width: 1300px) {
     .nosotrosContainer {
         padding: 4rem 0;
-        border-radius: 0 0 var(--border-radius, 30px) var(--border-radius, 30px);
     }
 
     .textColumn {
-        gap: 3rem;
+        gap: 2rem;
     }
 
     .title {
@@ -153,7 +152,12 @@
         margin: 0 2rem;
         gap: 2rem;
     }
+}
 
+@media (max-width: 530px) {
+    .title {
+        max-width: 450px;
+    }
 }
 
     /* 501 */

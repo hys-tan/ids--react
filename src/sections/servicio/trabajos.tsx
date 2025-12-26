@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './trabajos.module.css';
 import { BsGear, BsRobot, BsLightning, BsPeople, BsThermometerHalf, BsShieldCheck } from "react-icons/bs";
-import { useBorderRadiusOnScroll } from '../../hooks/useBorderRadiusOnView';
 import { IoArrowForward } from "react-icons/io5";
 import { getImageUrl } from '../../utils/image-helper';
 import Modal from '../../components/common/modal';
@@ -29,25 +28,11 @@ const featuredSlides = [
 ];
 
 const Trabajos: React.FC = () => {
-    const { ref, borderRadius } = useBorderRadiusOnScroll({
-        maxRadius: 50,
-        maxRadiusMobile: 30,
-        bottomOffset: 0,
-        bottomOffsetMobile: 0,
-    });
-
     // Estado del carrusel
     const [currentSlide, setCurrentSlide] = useState(0);
 
     // Estado del modal (null = cerrado, número = índice del modal abierto)
     const [activeModal, setActiveModal] = useState<number | null>(null);
-
-    // Aplicar la variable CSS al contenedor
-    useEffect(() => {
-        if (ref.current) {
-            ref.current.style.setProperty('--border-radius', `${borderRadius}px`);
-        }
-    }, [borderRadius, ref]);
 
     // Auto-avance del carrusel cada 10 segundos
     useEffect(() => {
@@ -68,7 +53,7 @@ const Trabajos: React.FC = () => {
     };
 
     return (
-        <div id="trabajos" className={styles.trabajosContainer} ref={ref}>
+        <div id="trabajos" className={styles.trabajosContainer}>
 
             {/* Título y descripción */}
             <div className={styles.headerSection}>

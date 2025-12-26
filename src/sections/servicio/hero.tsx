@@ -1,29 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import styles from './hero.module.css';
 import { getImageUrl } from '../../utils/image-helper';
 import { BsArrowDownCircleFill } from "react-icons/bs";
-import { useBorderRadiusOnScroll } from '../../hooks/useBorderRadiusOnView';
 import { useZoomOnScroll } from '../../hooks/useZoomOnScroll';
 
 const Hero: React.FC = () => {
-    const { ref, borderRadius } = useBorderRadiusOnScroll({
-        maxRadius: 50,
-        maxRadiusMobile: 30,
-        bottomOffset: 0,
-        bottomOffsetMobile: 0,
-    });
-
-    const { scale } = useZoomOnScroll();
+    const containerRef = useRef<HTMLDivElement>(null);
+    const { scale, borderRadius } = useZoomOnScroll();
 
     useEffect(() => {
-        if (ref.current) {
-            ref.current.style.setProperty('--border-radius', `${borderRadius}px`);
-            ref.current.style.setProperty('--zoom-scale', scale.toString());
+        if (containerRef.current) {
+            containerRef.current.style.setProperty('--border-radius', `${borderRadius}px`);
+            containerRef.current.style.setProperty('--zoom-scale', scale.toString());
         }
-    }, [borderRadius, scale, ref]);
+    }, [borderRadius, scale]);
 
     return (
-        <div className={styles.hero} ref={ref}>
+        <div className={styles.hero} ref={containerRef}>
             {/* SERVICIOS */}
             <img
                 src={getImageUrl('portada2.webp')}

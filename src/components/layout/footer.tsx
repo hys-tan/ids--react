@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './footer.module.css';
 import { BsPinMapFill, BsTelephoneFill, BsFillClockFill } from "react-icons/bs";
 import { IoMail } from "react-icons/io5";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
 import { getImageUrl } from '../../utils/image-helper';
+import { useFooterBorderRadius } from '../../hooks/useBorderRadiusOnView';
 
 const Footer: React.FC = () => {
+    const { ref, borderRadius } = useFooterBorderRadius({
+        maxRadius: 50,
+        maxRadiusMobile: 20,
+    });
+
+    useEffect(() => {
+        if (ref.current) {
+            ref.current.style.setProperty('--border-radius', `${borderRadius}px`);
+        }
+    }, [borderRadius, ref]);
+
     return (
-        <footer className={styles.footer}>
+        <footer className={styles.footer} ref={ref}>
             <div className={styles.footerContent}>
                 {/* Columna 1: Acerca de */}
                 <div className={styles.column}>

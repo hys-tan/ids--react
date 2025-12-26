@@ -63,7 +63,7 @@ const Navbar: React.FC = () => {
             <li><Link to="/servicios" onClick={closeMenu}>Servicios</Link></li>
             <li> <Link to="/repuestos" onClick={closeMenu}>Repuestos</Link></li>
             <li><Link to="/nosotros" onClick={closeMenu}>Nosotros</Link></li>
-            <li><Link to="/contacto" onClick={closeMenu}>Contáctanos</Link></li>
+            {/*<li><Link to="/contacto" onClick={closeMenu}>Contáctanos</Link></li>*/}
           </ul>
           <button className={styles.ctaButton} onClick={closeMenu}>
             Cotiza ahora

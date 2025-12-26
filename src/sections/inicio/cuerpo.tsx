@@ -1,25 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './cuerpo.module.css';
 import { getImageUrl } from '../../utils/image-helper';
-import { useBorderRadiusOnScroll } from '../../hooks/useBorderRadiusOnView';
 
 const Cuerpo: React.FC = () => {
-  const { ref, borderRadius } = useBorderRadiusOnScroll({
-    maxRadius: 50,
-    maxRadiusMobile: 30,
-    bottomOffset: 50,       // Desktop: coincide con bottom: -50px del ::before
-    bottomOffsetMobile: 30, // Móvil: coincide con bottom: -30px del ::before
-  });
-
-  // Aplicar la variable CSS al contenedor
-  useEffect(() => {
-    if (ref.current) {
-      ref.current.style.setProperty('--border-radius', `${borderRadius}px`);
-    }
-  }, [borderRadius, ref]);
-
   return (
-    <section className={styles.cuerpoContainer} ref={ref}>
+    <section className={styles.cuerpoContainer}>
       <h2 className={styles.title}>Nuestras Soluciones Integrales</h2>
 
       <div className={styles.grid}>
