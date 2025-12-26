@@ -75,7 +75,7 @@ const Footer: React.FC = () => {
                         </a>
                     </div>
                     <img
-                        src={getImageUrl('logo2.webp')}
+                        src={getImageUrl('logo.webp')}
                         alt="Idelsi Soluciones Logo"
                         className={styles.footerLogo}
                     />

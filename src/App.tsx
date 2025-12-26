@@ -6,6 +6,7 @@ import WhatsAppButton from './components/common/WhatsAppButton';
 import RouteScrollReset from './components/common/RouteScrollReset';
 import { UIProvider } from './contexts';
 import { useEffect } from 'react';
+import { useTimeBasedTheme } from './hooks/useTimeBasedTheme';
 
 // Importar páginas
 import Inicio from './pages/inicio';
@@ -15,6 +16,10 @@ import Nosotros from './pages/nosotros';
 import Contacto from './pages/contacto';
 
 function App() {
+  // Activar el sistema de temas basado en la hora
+  // Modo claro: 7:00 - 17:59 | Modo oscuro: 18:00 - 6:59
+  useTimeBasedTheme();
+
   useEffect(() => {
     const handleContextMenu = (e: MouseEvent) => {
       // Verifica si el elemento clickeado es una imagen (etiqueta <img>)
