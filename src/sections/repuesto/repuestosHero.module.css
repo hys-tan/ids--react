@@ -5,31 +5,285 @@
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #F0F0F0;
-    text-align: center;
-    padding: 0 7rem;
+    justify-content: space-between;
+    background-color: #26272B;
 }
 
-.content {
+/* Imagen de fondo */
+.backgroundImage {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    text-align: center;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.3;
 }
 
+/* Overlay oscuro */
+.repuestosHero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 25, 35, 0.8);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Contenido principal */
+.content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 112.5rem;
+    width: 100%;
+    padding: 0 7rem;
+    padding-top: 12rem;
+    flex: 1;
+}
+
+/* Badge */
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.badgeDot {
+    width: 8px;
+    height: 8px;
+    background-color: #F07E39;
+    border-radius: 50%;
+}
+
+.badgeText {
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-variation-settings: "wdth" 110;
+    color: #F07E39;
+    letter-spacing: 1px;
+}
+
+/* Título */
 .title {
-    margin-bottom: 2em;
-    margin-top: 4em;
     font-size: 3rem;
     font-weight: 800;
     font-variation-settings: "wdth" 112;
-    color: #26272B;
+    color: #F0F0F0;
+    margin: 0;
+    line-height: 1.3;
+    max-width: 800px;
 }
 
+.titleHighlight {
+    color: #F07E39;
+}
+
+/* Descripción */
 .description {
     font-size: 1rem;
-    line-height: 1.7;
     font-weight: 300;
     font-variation-settings: "wdth" 110;
+    color: #F0F0F0;
+    line-height: 1.7;
     margin: 0;
+    max-width: 587px;
+    text-align: justify;
+}
+
+/* Botón Info */
+.infoButton {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0;
+    background: none;
+    border: none;
+    color: #F0F0F0A5;
+    font-size: 1rem;
+    font-weight: 700;
+    font-variation-settings: "wdth" 110;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.infoButton:hover {
+    color: #F0F0F0;
+}
+
+/* Sección de marcas */
+.brandsSection {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 2rem 7rem;
+}
+
+.brandsLabel {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    font-variation-settings: "wdth" 110;
+    color: #6B7280;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+.brandsLabel::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.brandsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.brandItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brandLogo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: filter 0.5s ease, opacity 0.3s ease;
+}
+
+.brandLogo:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive - Tablet */
+@media (max-width: 1300px) {
+    .content {
+        padding: 0 2rem;
+        padding-top: 10rem;
+    }
+
+    .title {
+        font-size: 2.5rem;
+        max-width: 100%;
+    }
+
+    .description {
+        max-width: 100%;
+    }
+
+    .brandsSection {
+        padding: 2rem;
+    }
+
+    .brandsContainer {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem 3rem;
+    }
+
+    .brandLogo {
+        height: 35px;
+    }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+    .content {
+        padding-top: 9rem;
+        gap: 1.25rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .description {
+        font-size: 0.95rem;
+    }
+
+    .infoButton {
+        font-size: 0.95rem;
+    }
+
+    .brandsContainer {
+        gap: 1.5rem 2rem;
+    }
+
+    .brandLogo {
+        height: 30px;
+    }
+}
+
+/* Responsive - Small Mobile */
+@media (max-width: 501px) {
+    .content {
+        padding-top: 8rem;
+    }
+
+    .badgeText {
+        font-size: 0.75rem;
+    }
+
+    .title {
+        font-size: 1.75rem;
+        font-weight: 700;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+
+    .brandsLabel {
+        font-size: 0.7rem;
+    }
+
+    .brandLogo {
+        height: 25px;
+    }
+}
+
+@media (max-width: 400px) {
+    .title {
+        font-size: 1.5rem;
+    }
 }
