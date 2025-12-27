@@ -151,6 +151,8 @@
 /* Copyright */
 .copyright {
     text-align: center;
+    max-width: 98.5rem;
+    margin: 0 auto;
 }
 
 .divider {

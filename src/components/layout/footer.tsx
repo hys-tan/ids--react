@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
             {/* Copyright */}
             <div className={styles.copyright}>
                 <div className={styles.divider}></div>
-                <p>© 2024 Idelsi Soluciones SAC - Todos los derechos reservados.</p>
+                <p>© {new Date().getFullYear()} Idelsi Soluciones SAC - Todos los derechos reservados.</p>
             </div>
         </footer>
     );
