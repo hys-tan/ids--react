@@ -10,9 +10,9 @@
     background-color: #F0F0F0;
     color: #26272B;
     text-align: center;
-    padding: 4rem 7rem;
-    border-top: 0.5px solid #AAAAAA;
-    border-bottom: 0.5px solid #AAAAAA;
+    padding: 1rem 7rem;
+    /* border-top: 0.5px solid #AAAAAA;
+    border-bottom: 0.5px solid #AAAAAA; */
 }
 
 /* Contenedor principal */
@@ -125,7 +125,7 @@
     /* 1300 */
 @media (max-width: 1300px) {
     .nosotrosContainer {
-        padding: 4rem 0;
+        padding: 1rem 0;
     }
 
     .textColumn {

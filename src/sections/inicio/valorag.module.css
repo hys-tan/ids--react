@@ -9,9 +9,9 @@
     background-color: #F0F0F0;
     color: #26272B;
     text-align: center;
-    padding: 4rem 0;
+    padding: 2rem 0 3rem 0;
     gap: 2rem;
-    border-top: 0.5px solid #AAAAAA;
+    /* border-top: 0.5px solid #AAAAAA; */
 }
 
 /* Sección de encabezado */
@@ -110,7 +110,6 @@
 
     /* 1300 */
 @media (max-width: 1300px) {
-
     .headerSection {
         padding: 0 0;
     }

@@ -11,9 +11,9 @@
     position: relative;
     color: #26272B;
     text-align: center;
-    padding: 4rem 0;
-    gap: 4rem;
-    border-bottom: 0.5px solid #AAAAAA;
+    padding: 4rem 0 2rem 0;
+    gap: 3rem;
+    /* border-bottom: 0.5px solid #AAAAAA; */
 }
 
 .title {
@@ -106,7 +106,7 @@
 /* MOVIL V */
 @media (max-width: 1300px) {
     .cuerpoContainer {
-        padding: 4rem 0;
+        padding: 4rem 0 2rem 0;
     }
 
     .title {

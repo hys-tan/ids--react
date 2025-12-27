@@ -6,7 +6,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #F07E39;
+    background: linear-gradient(-160deg, #F07E39 75%, #F3833E 25%);
     color: #F0F0F0;
     text-align: center;
     padding: 2.25rem 0;
