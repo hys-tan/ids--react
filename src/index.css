@@ -2,7 +2,6 @@
 
 /* ==================== VARIABLES DE TEMA ==================== */
 
-/* Modo Claro (por defecto) - activo de 7:00 a 17:59 */
 :root {
   --bg-primary: #F0F0F0;
   --bg-card: #DADADA;
@@ -17,36 +16,18 @@
   --accent-hover: #ff9e5e;
 }
 
-/* Modo Oscuro - activo de 18:00 a 6:59 */
-:root.dark-mode {
-  --bg-primary: #26272B;
-  --bg-card: #1E2024;
-  --bg-icon: #2A2D32;
-  --text-primary: #F0F0F0;
-  --text-secondary: #A7A8A9;
-  --text-icon: #F07E39;
-  --border: #3A3B3F;
-  --border-light: #3A3B3F;
-  --accent: #F07E39;
-  --accent-light: #F3833E;
-  --accent-hover: #ff9e5e;
-}
-
 /* ==================== ESTILOS GLOBALES ==================== */
 
 body {
   background-color: var(--bg-primary);
   margin: 0;
   font-family: "Archivo", sans-serif;
-  font-optical-sizing: auto;
+  font-optical-sizing: auto;  
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-user-select: none;
-  /* Safari */
-  -ms-user-select: none;
-  /* IE 10 and IE 11 */
-  user-select: none;
-  /* Standard syntax */
+  -webkit-user-select: none;      /* Safari */
+  -ms-user-select: none;          /* IE 10 and IE 11 */
+  user-select: none;              /* Standard syntax */
   transition: background-color 0.3s ease;
 }
 
